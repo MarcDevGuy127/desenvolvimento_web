@@ -1,0 +1,87 @@
+
+/* Estilo geral do corpo */
+body {
+  background: url('/images/landscapenight.jpeg') no-repeat center center fixed;
+  background-size: cover;
+  /* A imagem cobre toda a tela */
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  /* Define a fonte padrão */
+}
+
+/* Botão estilizado */
+.btn-primary {
+  background-color: #007bff;
+  /* Azul padrão */
+  border: none;
+  /* Remove a borda */
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  /* Azul mais escuro no hover */
+}
+
+/* Estilo para o card com efeito embaçado*/
+/*background: rgba(41, 41, 41, 0.338); */
+#blurred-card {
+
+  background: rgba(255, 255, 255, 0.338);/* Fundo transparente com leve opacidade */
+  backdrop-filter: blur(10px);/* Efeito embaçado */
+  border: 2px solid #28a745;/* Borda verde */
+  border-radius: 10px;/* Arredondamento das bordas */
+  max-width: 500px;/* Largura máxima do card */
+  width: 100%;/* Adapta-se ao tamanho da tela menor */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);/* Sombra para profundidade */
+}
+
+#blurred-card h2 label { /*se tirar a virgula ambos se invertem kkk bem massa só configurar a cor do blur*/
+  color: #FFFFFF; /* Cor da fonte do título */
+}
+
+/*Estilo da notificação do botão enviar*/
+.notification {
+  position: fixed; /* Fixa a notificação na tela */
+  top: 20px; /* Distância do topo */
+  right: 20px; /* Distância da borda direita */
+  padding: 10px 20px;
+  background-color: #28a745; /* Cor de sucesso */
+  color: white;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000; /* Garante que a notificação fique por cima de outros elementos */
+  display: none; /* Inicialmente invisível */
+  opacity: 0; /* Inicialmente invisível */
+  transition: all 0.5s ease-in-out; /* Adiciona suavidade nas transições */
+}
+
+#sucess-message {
+  display: none;
+}
+
+.notification.show {
+  right: 20px; /* Finaliza a animação com a notificação visível no canto direito */
+  opacity: 1; /* Torna a notificação visível */
+}
+
+.notification.hide {
+  right: -300px; /* Move a notificação para fora da tela à direita */
+  opacity: 0; /* Torna a notificação invisível */
+}
+
+/*
+/* Tema Escuro /
+body.dark-mode {
+  background-color: #121212;
+  color: white;
+}
+
+/* Tema Claro /
+body.light-mode {
+  background-color: white;
+  color: black;
+}
+*/

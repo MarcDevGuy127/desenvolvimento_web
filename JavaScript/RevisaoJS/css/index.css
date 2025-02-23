@@ -1,0 +1,49 @@
+/* Estilização do body */
+body {
+    font-family: 'Arial', sans-serif; /* Definindo uma fonte clara e legível */
+    background-color: #f0f0f0; /* Cor de fundo suave */
+    color: #333; /* Cor do texto */
+    margin: 0; /* Remover margens padrão */
+    padding: 0; /* Remover preenchimento padrão */
+    line-height: 1.6; /* Melhorar a legibilidade do texto */
+}
+
+/* Estilização do nav (barra de navegação) */
+nav {
+    background-color: #333; /* Fundo escuro para destacar a navegação */
+    padding: 10px 0; /* Espaçamento interno (topo e fundo) */
+    text-align: center; /* Centralizar os itens de navegação */
+}
+
+nav ul {
+    list-style: none; /* Remover os pontos de lista padrão */
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline; /* Exibir os itens de lista em linha (horizontal) */
+    margin: 0 15px; /* Espaçamento horizontal entre os itens */
+}
+
+nav ul li a {
+    color: #fff; /* Cor branca para os links */
+    text-decoration: none; /* Remover o sublinhado dos links */
+    font-weight: bold; /* Deixar os links em negrito */
+    font-size: 16px; /* Tamanho da fonte */
+    text-transform: uppercase; /* Transformar as letras em maiúsculas */
+    transition: color 0.3s ease; /* Transição suave de cor */
+}
+
+nav ul li a:hover {
+    color: #f0a500; /* Cor do link ao passar o mouse (efeito hover) */
+}
+
+body {
+    background-color: rgb(206, 209, 197);
+}
+
+.multiplo-de-3 {
+    background-color: #dbe6eb; /* Cor de fundo amarela */
+    font-weight: bold;
+}

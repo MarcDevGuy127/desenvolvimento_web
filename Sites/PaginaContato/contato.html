@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Contato</title>
+</head>
+<body>
+    <header>
+        topo do menu
+    </header>
+    <a href="/">Menu Inicial</a>
+    <a href="/sobre.html">Sobre</a>
+    <main>
+        <form>
+        <div>
+            <label for="txt_nome">Nome:</label>
+            <input type="text" id="txt_nome" maxlength="10"/>
+    
+            <label for="nm_periodo">Período:</label>
+            <input type="number" id="nm_periodo" min="0" max="20"/>
+            <div>
+                <label for="chk_concordo">Concordo</label>
+                <input type="checkbox" id="chk_concordo"/>    
+            </div>    
+        </div>
+        <div>
+            <label for="chk_concordo">Manhã</label>
+            <input type="radio" id="chk_concordo" name="rad_turno"/>
+
+            <label for="chk_concordo">Tarde</label>
+            <input type="radio" id="chk_concordo" name="rad_turno"/>
+
+            <label for="chk_concordo">Noite</label>
+            <input type="radio" id="chk_concordo" name="rad_turno"/>
+        </div>
+        <div>
+            <label for="snh_usuario">Senha</label>
+            <input type="password" id="snh_usuario" name="rad_turno" min="6" maxlength="12"/>
+            <label for="sl_curso">Curso</label>    
+            <select id="sl_curso">
+            <option value="">Nenhum</option>    
+                <option value="1">Engenharia de Software</option>
+                <option value="2">Banco de Dados</option>
+                <option value="3">Lógica</option>
+            </select>
+        </div>
+        </form>
+        
+    </main>
+    <footer>
+        Rodapé com links
+    </footer>
+</body>
+</html>

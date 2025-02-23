@@ -1,0 +1,280 @@
+header {
+  background-color: rgb(32, 31, 31);
+}
+
+header nav.navbar div.container-fluid a.navbar-brand {
+  color: aliceblue;
+}
+
+*body {
+  /*rgba(240, 248, 255, 0.74)*/
+  background-color: rgba(240, 248, 255, 0.74);
+}
+
+/* Custom default button */
+.btn-light,
+.btn-light:hover,
+.btn-light:focus {
+  color: #333;
+  text-shadow: none; /* Prevent inheritance from `body` */
+}
+
+p {
+  display: flexbox;
+  text-align: justify;
+}
+
+p#copyright-footer {
+  text-align: center;
+}
+ul.dropdown-menu {
+  list-style-type: none; /* Remove o bullet */
+  padding-left: 0; /* Remove o recuo à esquerda */
+}
+
+h1 {
+  padding: 0;
+  margin: 0;
+  display: inline;
+}
+
+li.nav-item.dropdown, a { 
+  text-decoration: none;
+  color: aliceblue;
+}
+
+ul {
+  display: flex; /* Alinha os itens em linha */
+  list-style: none; /* Remove os marcadores da lista */
+  padding: 0; /* Remove o padding */
+  margin: 0; /* Remove a margem */
+}
+
+li {
+  text-align: justify;
+  list-style-type: none; /* Remove o bullet */
+  padding-left: 0; /* Remove o recuo à esquerda */
+  margin: 0; /* Remove a margem entre os itens */
+}
+
+a {
+  padding: 10px 15px; /* Adiciona espaço ao redor do link */
+  cursor: pointer; /* Define o cursor como ponteiro */
+}
+
+div.divid ul li {
+  display: inline;
+  text-decoration: none;
+  padding: 15px;
+}
+
+#search {
+  /*essa id é da barra de pesquisa*/
+  background-color: rgb(39, 37, 37);
+  color: aliceblue;
+}
+
+.navbar-brand {
+  color: #fff; /* White text */
+  position: relative;
+  animation: pulse2 0.3s ease;
+}
+
+/*
+*.navbar-brand:hover {
+  animation: pulse2 2s infinite;
+}
+@keyframes pulse2 { 
+  0% {
+      box-shadow: 0 0 3px rgba(255, 255, 255, 0.3),
+                  0 0 5px rgba(255, 255, 255, 0.2),
+                  0 0 10px rgba(255, 255, 255, 0.1);
+  } 
+  50% {
+      text-shadow: 0 0 5px rgb(68, 68, 68), 
+                   0 0 10px rgba(240, 248, 255, 0.219);
+  }
+  100% {
+      box-shadow: 0 0 3px rgba(255, 255, 255, 0.3),
+                  0 0 5px rgba(255, 255, 255, 0.2),
+                  0 0 10px rgba(255, 255, 255, 0.1);
+  }
+}
+*/
+
+
+/* Inc name neon effect */
+.navbar .bi.bi-github:hover {
+  border-radius: 16px; /* Optional: add rounded corners */
+  animation: pulse 2s infinite; /* Continuous pulse effect */
+}
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 3px rgba(255, 255, 255, 0.3),
+      0 0 5px rgba(255, 255, 255, 0.2), 0 0 10px rgba(255, 255, 255, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.6),
+      0 0 15px rgba(255, 255, 255, 0.4), 0 0 25px rgba(255, 255, 255, 0.2);
+  }
+  100% {
+    box-shadow: 0 0 3px rgba(255, 255, 255, 0.3),
+      0 0 5px rgba(255, 255, 255, 0.2), 0 0 10px rgba(255, 255, 255, 0.1);
+  }
+}
+
+button#theme-toggle {
+  display: block; /* Garante que o botão seja tratado como bloco */
+  margin-left: auto; /* Empurra o botão para o lado direito */
+}
+
+/*Testing xbox360 green bar selection effect */
+/*.xbox360-effect {
+    position: relative;
+    font-size: 2rem;
+    padding: 10px;
+    transition: color 0.3s;
+}
+
+.xbox360-effect::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(0, 255, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: -1;
+}
+
+.xbox360-effect:hover {
+    color: #000;
+}
+
+.xbox360-effect:hover::before {
+    opacity: 1;
+}*/
+/*Testing xbox360 green line selection effect */
+/*.xbox360-effect {
+    font-size: 2rem;
+    padding: 10px;
+    position: relative;
+    text-shadow: 0 0 5px rgba(0, 255, 0, 0.8);
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+.xbox360-effect::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 5px;
+    background-color: rgba(0, 255, 0, 0.8);
+    transform: scaleX(0);
+    transition: transform 0.3s;
+}
+
+.xbox360-effect:hover {
+    color: #00ff00;
+    text-shadow: 0 0 15px rgba(0, 255, 0, 1);
+}
+
+.xbox360-effect:hover::after {
+    transform: scaleX(1);
+}*/
+/*Testing*/
+/*
+.xbox360-effect {
+    font-size: 3rem;
+    position: relative;
+    color: rgb(141, 141, 141);
+    transition: color 0.3s;
+}
+
+.xbox360-effect::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.5);
+    filter: blur(10px);
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: -1; /* Behind the text 
+}
+.xbox360-effect:hover {
+    color: white;
+}
+
+.xbox360-effect:hover::after {
+    opacity: 1; /* Show the shine effect on hover 
+}
+p.xbox360-effect {
+  transition: text-shadow 1.5s ease; /* Adiciona transição suave 
+  font-size: 16px;
+  pointer-events: auto;
+}
+*/
+
+.xbox360-effect {
+  font-size: 3rem;
+  color: aliceblue; /* Main text color */
+}
+
+.xbox360-effect:hover {
+  text-shadow: 0 0 1px rgb(66, 66, 66), 0 0 2px rgba(143, 143, 143, 0.534),
+    0 0 4px rgb(143, 143, 143, 0.534), 0 0 5px rgb(143, 143, 143, 0.534),
+    0 0 8px rgb(143, 143, 143, 0.534), 0 0 9px rgb(143, 143, 143, 0.534); /* Brighter outer glow */
+}
+
+/*footer*/
+footer img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  /* Altura do contêiner */
+}
+
+/* Estiliza a lista de navegação no rodapé */
+#nav-footer {
+  display: block;
+}
+
+#nav-footer li {
+  padding: 5px;
+  /* Adiciona espaço entre os itens */
+}
+
+#nav-footer a {
+  display: inline-block;
+  /* Garante que os links fiquem em uma nova linha */
+}
+
+/* Estiliza o título com uma linha acima */
+.line-footer {
+  position: relative;
+  padding-top: 1rem;
+  /* Espaçamento entre a linha e o texto */
+}
+
+.line-footer h5 {
+  font-weight: bold;
+  position: relative;
+  margin: 0;
+}
+
+.line-footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  /* Altere para ajustar o comprimento da linha */
+  height: 2px;
+  /* Espessura da linha */
+  background-color: #0d6efd;
+  /* Cor da linha */
+}

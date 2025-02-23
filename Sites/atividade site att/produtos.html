@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos</title>
+    <div>
+        <style>
+            /* comentario no css se faz assim. O efeito cascata do css se faz aqui no style para pegar para todas as tags*/ 
+            #teste1 {
+                color: red;
+                background-color: grey;
+                border: solid 4px darkturquoise;
+                font-weight: bold;
+            }
+            #teste2 {
+                color: red;
+                background-color: white;
+                border-bottom: solid 4px blue;
+            }
+            .letra-verde {
+                color: green;
+            }
+            /*margin em relação ao pai é algo externo e padding é a distancia interna em relação a ele mesmo*/
+            ul {
+              list-style-type: none;
+              margin: 0;
+              padding: 0;
+            }
+            
+            ul a {
+              display: block;
+              width: 60px;
+              background-color: #000000;
+              color:green;
+            }
+            table thead tr th {
+                border-bottom: solid 5px red;
+                background-color: grey;
+            }
+            table tbody tr td {
+                background-color: cyan;
+                border-left: solid 5px purple;
+            }
+            table tfoot {
+                font-weight: bold;
+                font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            }
+            
+
+        </style>
+    </div>
+</head>
+<body>
+        <header>
+            <h1>Site Teste</h1>
+            <div>
+                <nav id="menu_panel">
+                    <h3 style="color: darkorchid;background-color: rgb(223, 152, 223);font-family: Arial, Helvetica, sans-serif;">Hello</h3>
+                    <ul>
+                        <il><a style="color:white" href="/">Inicial</a></il>
+                        <il><a style="text-decoration: none;" href="/contato.html" target="_blank">Contato</a></il>
+                        <il><a href="/sobre.html" target="_blank">Sobre</a></il>
+                    </ul>
+                </nav>
+                
+        </header>
+        <main>
+            <h1>Lista</h1>
+
+            <table> <!--             <table border="1"> moda antiga-->
+                    <thead>
+                        <tr>
+                            <th>RA</th> <!-- ln 1 cl 1 / th é negrito e tr não é-->
+                            <th>Nome</th> <!-- ln 1 cl2 -->
+                        </tr>
+                    </thead>  
+                    <tbody>
+                        <tr>
+                            <td>123</td> <!-- ln2 cl1 -->
+                            <td>Fulanin</td> <!-- ln3 cl1 -->
+                        </tr>
+                    </tbody>   
+                    <tfoot>
+                        <td>total</td> 
+                        <td>2</td> 
+                    </tfoot>            
+            </table>
+        </main>
+        <footer>rodape com links</footer>
+</body>
+</html>

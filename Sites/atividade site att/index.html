@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta chaset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bem vindo</title>
+    <div>
+        <style>
+            /* comentario no css se faz assim. O efeito cascata do css se faz aqui no style para pegar para todas as tags*/ 
+            /* # usa-se para uma tag especifica no qual usase o ID para formatar*/
+            /* para classe utiliza-se do "." também é usada pra reaproveitar classe para não se repetir id, se eu quiser ouse outra classe usa-se o espaço*/
+            /* o asterisco na frente é para alterar pra todo mundo*/
+            /* nav a: hover server para quando coloca o mouse em cima para dar o efeito de menu*/
+            * { 
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+            }
+            #teste1 {
+                color: red;
+                background-color: grey;
+                border: solid 4px darkturquoise;
+                font-weight: bold;
+            }
+            #teste2 {
+                color: red;
+                background-color: white;
+                border-bottom: solid 4px blue;
+            }
+            .letra-verde {
+                color: green;
+            }
+            /*margin em relação ao pai é algo externo e padding é a distancia interna em relação a ele mesmo*/
+            ul {
+              list-style-type: none;
+              margin: 0;
+              padding: 0;
+            }
+            
+            ul a {
+              display: block;
+              width: 60px;
+              background-color: #000000;
+              color:green;
+            }
+            
+
+        </style>
+    </div>
+</head>
+<body>
+        <!--cabecalho da pagina que nao muda tudo que ta no header sao coisas comuns em todas as  paginas-->
+        <header>
+            <h1>Site Teste</h1>
+            <div>
+                <nav id="menu_panel">
+                    <!-- style decoration none é para não ficar azul ao clicar e remover a linha de baixo do link-->
+                    <!-- Ao colocar aqui a cor muda apenas deste h3, no entanto se eu colocar a cor do h3 direto no style qualquer h3 da minha body ficara-->
+                    <h3 style="color: darkorchid;background-color: rgb(223, 152, 223);font-family: Arial, Helvetica, sans-serif;">Hello</h3>
+                    <ul>
+                        <il><a style="color:white" href="/">Inicial</a></il>
+                        <il><a style="text-decoration: none;" href="/contato.html" target="_blank">Contato</a></il>
+                        <il><a href="/sobre.html" target="_blank">Sobre</a></il>
+                        <il><a href="/produtos.html" target="_blank">produtos</a></il>
+                    </ul>
+                </nav>
+            </div>
+            <div id="teste1">
+                teste 1
+            </div>
+            <div id="teste2">
+                teste 2
+            </div>
+        </header>
+        <!--conteuo da main e o que sempre muda de acordo com as paginas-->
+        <main>
+            Bem vindo a home
+            <section>
+                <h3>Cursos</h3>
+                <div>
+                    <h4>Eng Soft</h4>
+                    <p class="letra-verde">Desrição</p>
+                </div>
+            </section>
+        </main>
+        <footer>rodape com links</footer>
+</body>
+</html>

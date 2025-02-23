@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato</title>
+    <div>
+        <style>
+            ul {
+              list-style-type: none;
+              margin: 0;
+              padding: 0;
+            }
+            
+            li a {
+              display: block;
+              width: 60px;
+              background-color: #b42929;
+            }
+            </style>
+    </div>
+</head>
+<body>
+        <header>
+            <h1>Site Teste</h1>
+            <div>
+                <nav id="menu_panel">
+                    <h3 style="color: darkorchid;">Hello</h3>
+                    <ul><a href="/">Inicial</a></ul>
+                    <ul><a href="/contato.html" target="_blank">Contato</a></ul>
+                    <ul><a href="/sobre.html" target="_blank">Sobre</a></ul>
+                </nav>
+            </div>
+        </header>
+        <main>
+            <form>
+                <div>
+                    <label for="txt_name">Nome:</label>
+                    <input type="text" id="txt_name" maxlength="70" />
+                </div>
+                <div>
+                    <label for="txt_senha">Senha:</label>
+                    <input type="password" id="txt_senha" maxlength="6" />
+                </div>
+                <div>
+                    <label for="nm_periodo">Periodo:</label>
+                    <input type="number" id="nm_periodo" min="1" max="10" />
+                </div>
+                <div>
+                    <label for="chk_concordo">Concordo</label>
+                    <input type="checkbox" id="chk_concordo" />
+                </div>
+                <div>
+                    <label for="rd_manha">Manha</label>
+                    <input type="radio" id="rd_manha" name="rd_turno" />
+                    <label for="rd_tarde">Tarde</label>
+                    <input type="radio" id="rd_tarde" name="rd_turno" />
+                    <label for="rd_noite">Noite</label>
+                    <input type="radio" id="rd_noite" name="rd_turno" />
+                </div>
+                <div>
+                    <label for="sl_cursos">Curso</label>
+                    <select id="sl_cursos">
+                        <option value="">Nenhum</option>
+                        <option value="EngSft">Engenharia de Software</option>
+                        <option value="EngMec">Engenharia Mecanica</option>
+                        <option value="Enf">Enfermagem</option>
+                    </select>
+                </div>
+            </form>
+        </main>
+        <footer>rodape com links</footer>
+</body>
+</html>

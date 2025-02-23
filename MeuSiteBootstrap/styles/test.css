@@ -1,0 +1,48 @@
+footer img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* Altura do contêiner */
+}
+
+/* Estiliza a lista de navegação no rodapé */
+#nav-footer {
+    display: block;
+}
+
+#nav-footer li {
+    padding: 5px;
+    /* Adiciona espaço entre os itens */
+}
+
+#nav-footer a {
+    display: inline-block;
+    /* Garante que os links fiquem em uma nova linha */
+}
+
+/* Estiliza o título com uma linha acima */
+.line-footer {
+    position: relative;
+    padding-top: 1rem;
+    /* Espaçamento entre a linha e o texto */
+}
+
+.line-footer h5 {
+    font-weight: bold;
+    position: relative;
+    margin: 0;
+}
+
+.line-footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    /* Altere para ajustar o comprimento da linha */
+    height: 2px;
+    /* Espessura da linha */
+    background-color: #0d6efd;
+    /* Cor da linha */
+}

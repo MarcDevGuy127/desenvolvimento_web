@@ -1,0 +1,29 @@
+div {
+    display: center;
+    justify-content: center;
+    margin: 0 auto;
+    background-color: rgb(255, 147, 147);
+    padding: 20px;
+    border: 2px solid rgb(185, 34, 34); /* Borda simples ao redor do formulário */
+    border-radius: 8px;
+    width: 300px;
+    font-weight: bolder;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.aprovado {
+    color: green;
+}
+
+.reprovado {
+    color:rgb(185, 34, 34);
+}
