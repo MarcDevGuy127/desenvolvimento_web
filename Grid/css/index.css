@@ -5,8 +5,11 @@
     text-align: center;
 
     /*minmax(valor minimo, valor maximo)*/
-    grid-template-columns: 100px 100px minmax(100px, 200px); /*tamanho e numero de colunas*/
-    grid-template-rows: minmax(100px, 200px) 100px 100px; /* tamanho de uma linha de elementos da tabela grid*/
+    /*grid-template-columns: repeat(3, minmax(100px, 200px)); /*tamanho e numero de colunas*/
+    
+    /*repeat resume as propriedades nesta sintaxe: repeat(qntde de elementos, tamanho de cada elemento)*/
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px); /* tamanho de uma linha de elementos da tabela grid*/
     gap: 10px; /*espacamento entre cada retangulo da tabela grid*/
 }
 
