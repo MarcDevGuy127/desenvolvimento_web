@@ -44,7 +44,24 @@
     /*pilares se juntam no centro da tela*/
     justify-content: center;
     align-content: center;
+}
 
+#box-1 {
+    /*de forma mais simples, a linhas invisiveis
+    que delimitam a forma de acordo com o
+    tamanho do inicio e fim. Tais linhas começam e terminam
+    das partes de fora da forma envolvendo o grid*/
+
+    /*coluna aonde a caixa irá começar*/
+    grid-column-start: 1;
+    /*as formas 1,2 e 3 serão ocupadas*/
+    /*a forma 4 vai estar livre para as demais formas*/
+    grid-column-end: 4;/*forma delimitando a caixa, a forma 4 irá ceder espaço livre para as demais formas do grid*/
+}
+
+#box-2 {
+    grid-row-start: 2;
+    grid-row-end: 6;
 }
 
 .container div {
