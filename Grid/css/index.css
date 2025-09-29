@@ -17,9 +17,11 @@
     grid-template-columns: 1fr 1fr 2fr;
     grid-template-rows: repeat(3, 100px);
     
-    /*gap: 10px; /*espacamento geral(colunas, linhas) entre cada retangulo da tabela grid*/
-    grid-row-gap: 10px; /*espacamento entre todas as linhas do grid*/
-    grid-column-gap: 30px; /*espacamento entre todas as colunas do grid*/
+    /*gap: 10px; /*espacamento geral(colunas, linhas) entre cada retangulo da tabela grid */
+    grid-gap: 10px 15px; /*espacamento com tamanho: (colunas, linhas)
+    grid-row-gap: 10px; /*espacamento entre todas as linhas do grid
+    grid-column-gap: 30px; espacamento entre todas as colunas do grid*/
+
 }
 
 .container div {
