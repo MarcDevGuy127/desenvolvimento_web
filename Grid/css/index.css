@@ -1,10 +1,11 @@
 
 .container {
-    display: grid;
+    display: grid; /*configuração para formato de tabela*/
     justify-content: center;
     text-align: center;
-    grid-template-columns: 50px;
-    gap: 10px;
+    grid-template-columns: 50px 50px 50px; /*tamanho e numero de colunas*/
+    /*grid-template-rows: 25px 25px 25px; tamanho de uma linha de elementos da tabela grid*/
+    gap: 10px; /*espacamento entre cada retangulo da tabela grid*/
 }
 
 .container div {
