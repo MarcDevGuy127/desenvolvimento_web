@@ -3,6 +3,7 @@
     display: grid; /*configuração para formato de tabela*/
     justify-content: center;
     text-align: center;
+    height: 100%;
 
     /*minmax(valor minimo, valor maximo)*/
     /*grid-template-columns: repeat(3, minmax(100px, 200px)); /*tamanho e numero de colunas*/
@@ -14,13 +15,35 @@
     /*fr funciona como uma fatia, a soma e a quantidade total de fatias representam porcentagens*/
     /*ex: 1fr   1fr    2fr  -> 5fr*/
     /*    25%   25%    50% = 100% -> 5fr*/
-    grid-template-columns: 1fr 1fr 2fr;
+    /*grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: repeat(3, 100px);
-    
+    */
+
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+
     /*gap: 10px; /*espacamento geral(colunas, linhas) entre cada retangulo da tabela grid */
     grid-gap: 10px 15px; /*espacamento com tamanho: (colunas, linhas)
     grid-row-gap: 10px; /*espacamento entre todas as linhas do grid
     grid-column-gap: 30px; espacamento entre todas as colunas do grid*/
+
+    /*exemplos de alinhamento*/
+    /*pilares esquerdo e direito nos cantos e um no meio*
+    justify-content: space-between;
+    align-content: space-between;*/
+
+    /*pilares esquerdo e direito aproximados ao meio/
+    justify-content: space-around;
+    align-content: space-around;
+    */
+
+    /*pilares se juntam de acordo com o zoom/tamanho da tela/
+    justify-content: space-evenly;
+    align-content: space-evenly;*/
+
+    /*pilares se juntam no centro da tela*/
+    justify-content: center;
+    align-content: center;
 
 }
 
