@@ -5,7 +5,7 @@
     grid-template-rows: repeat(3, 100px);
     grid-template-columns: repeat(6, 100px);
 
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: space-evenly;
 
     color: aliceblue;
