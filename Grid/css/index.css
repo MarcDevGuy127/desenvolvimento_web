@@ -64,6 +64,21 @@
     grid-row-end: 6;
 }
 
+#box-3 {
+    /*é possível fazer sub-divisoes*/
+    grid-column: 2 / 4;
+    grid-row: 2 / 6;
+}
+
+#box-4 {
+    /*é possível determinar row e column start + row e column end */
+    /* 1° -> grid row start*/
+    /* 2° -> grid column start*/
+    /* 3° -> grid row end*/
+    /* 4° -> grid column end*/
+    grid-area: 6 / 1 / 8 / 4;
+}
+
 .container div {
     padding: 40px;
     color: aliceblue;
