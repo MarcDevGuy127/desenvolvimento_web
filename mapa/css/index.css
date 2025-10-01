@@ -48,3 +48,12 @@
     background: rgb(199, 199, 199);
     padding: 40px;
 }
+
+.secao_superior {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+
+    p {
+        font-size: larger;
+    }
+}
