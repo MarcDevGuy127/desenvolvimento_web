@@ -6,7 +6,7 @@
     border: 1px solid black;
 }
 
-.container2, .container4 {
+.poltronas_esquerda, .poltronas_direita {
 
     height: 100%;
     display: grid;
@@ -24,13 +24,12 @@
     gap: 30px;
     border: 1px solid black;
     background: rgb(199, 199, 199);
-    padding: 40px;
+    padding: 30px;
     padding-right: 1240px;
-    /*grid-row: 6 / 8; /*linha / coluna*/
-    grid-row: 10; /*linha 10*/
+    grid-row: 7 / 12; /*linha / coluna*/
 }
 
-.container3 {
+.poltronas_centro {
     height: 100%;
     display: grid;
     width: min-content;
