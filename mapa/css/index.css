@@ -1,48 +1,32 @@
-.container {
+.container1 {
+    display: flex; /* coloca filhos lado a lado */
+    gap: 2px; /* espaço entre os containers */
+}
+
+.container2 {
+
     height: 100%;
     display: grid;
     justify-content: center;
     align-items: space-evenly;
+    width: max-content;
     grid-gap: 8px 8px;
 
-    grid-template-rows: repeat(3, 100px); /*dividir em colunas de acordo com a quantidade de divs/elementos no html*/
-    grid-template-columns: repeat(12, 100px); /*repetir de acordo com a quantidade de divs/elementos no html*/
-
+    grid-template-columns: repeat(2, 100px); /*repetir de acordo com a quantidade de divs/elementos no html*/
+    grid-template-rows: repeat(5, 100px); /*dividir em colunas de acordo com a quantidade de divs/elementos no html*/
+    padding: 10px;
+    
     color: aliceblue;
-    background-color: brown;
+    background-color: rgb(67, 3, 123);
     border: 4px solid black;
 
-    padding: 10px;
-    padding-left: 0;
-    padding-right: 0;
-}
-
-.container .poltrona {
-    border: 4px solid red;
-    background-color: lightcoral;
-    padding: 40px;
-}
-
-/*.container2 {
-
-    align-items: flex-start;
-    height: 100%;
-    display: grid;
-    
-    justify-content: center;
-    align-items: space-evenly;
-    grid-gap: 8px 8px;
-    grid-template-rows: repeat(6, 100px); /*dividir em colunas de acordo com a quantidade de divs/elementos no html*
-    grid-template-columns: repeat(2, 100px); /*repetir de acordo com a quantidade de divs/elementos no html*
-
     .poltrona {
-        border: 4px solid rgb(21, 0, 255);
-        background-color: rgb(147, 128, 240);
+        border: 4px solid rgb(2, 37, 83);
+        background-color: rgb(79, 43, 255);
         padding: 40px;
     }
-
 }
-*/
+
 #tela {
     gap: 30px;
     border: 4px solid red;
@@ -50,4 +34,27 @@
     padding: 40px;
     padding-right: 1240px;
     /*grid-row: 6 / 8; /*linha / coluna*/
+}
+
+.container3 {
+    height: 100%;
+    display: grid;
+    width: 1350px;
+    justify-content: center;
+    align-items: space-evenly;
+    grid-gap: 8px 8px;
+
+    grid-template-rows: repeat(6, 100px); /*dividir em colunas de acordo com a quantidade de divs/elementos no html*/
+    grid-template-columns: repeat(12, 100px); /*repetir de acordo com a quantidade de divs/elementos no html*/
+    padding: 10px;
+
+    color: aliceblue;
+    background-color: brown;
+    border: 4px solid black;
+}
+
+.container3 .poltrona {
+    border: 4px solid red;
+    background-color: lightcoral;
+    padding: 40px;
 }
