@@ -1,6 +1,9 @@
 .container1 {
+    width: max-content;
     display: flex; /* coloca filhos lado a lado */
     gap: 2px; /* espaço entre os containers */
+    background: gray;
+    border: 1px solid black;
 }
 
 .container2, .container4 {
@@ -15,31 +18,22 @@
     grid-template-columns: repeat(2, 100px); /*repetir de acordo com a quantidade de divs/elementos no html*/
     grid-template-rows: repeat(5, 100px); /*dividir em colunas de acordo com a quantidade de divs/elementos no html*/
     padding: 10px;
-    
-    color: aliceblue;
-    background-color: rgb(67, 3, 123);
-    border: 4px solid black;
-
-    .poltrona {
-        border: 4px solid rgb(2, 37, 83);
-        background-color: rgb(79, 43, 255);
-        padding: 40px;
-    }
 }
 
 #tela {
     gap: 30px;
-    border: 4px solid red;
-    background-color: lightcoral;
+    border: 1px solid black;
+    background: rgb(199, 199, 199);
     padding: 40px;
     padding-right: 1240px;
     /*grid-row: 6 / 8; /*linha / coluna*/
+    grid-row: 10; /*linha 10*/
 }
 
 .container3 {
     height: 100%;
     display: grid;
-    width: 1350px;
+    width: min-content;
     justify-content: center;
     align-items: space-evenly;
     grid-gap: 8px 8px;
@@ -47,14 +41,11 @@
     grid-template-rows: repeat(6, 100px); /*dividir em colunas de acordo com a quantidade de divs/elementos no html*/
     grid-template-columns: repeat(12, 100px); /*repetir de acordo com a quantidade de divs/elementos no html*/
     padding: 10px;
-
-    color: aliceblue;
-    background-color: brown;
-    border: 4px solid black;
 }
 
-.container3 .poltrona {
-    border: 4px solid red;
-    background-color: lightcoral;
+.poltrona {
+    border: 1px solid black;
+    border-radius: 12px;
+    background: rgb(199, 199, 199);
     padding: 40px;
 }
