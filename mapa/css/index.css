@@ -44,6 +44,12 @@
     grid-template-rows: repeat(6, 100px); /*dividir em colunas de acordo com a quantidade de divs/elementos no html*/
     grid-template-columns: repeat(12, 100px); /*repetir de acordo com a quantidade de divs/elementos no html*/
     padding: 10px;
+
+    .teste {
+        grid-column: 12 / 1;
+        padding: 40px;
+        background-color: aqua  ;
+    }
 }
 
 .placar {
