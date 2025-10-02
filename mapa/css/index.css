@@ -1,6 +1,7 @@
 * {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
 .container1 {
     width: max-content;
     display: flex; /* coloca filhos lado a lado */
@@ -51,6 +52,7 @@
     gap: 10px;
     padding: 15px;
     font-size: large;
+    align-items: center;
     background-color: gainsboro;
     width: max-content;
 
@@ -59,7 +61,7 @@
         border: 1px solid black;
         border-radius: 6px;
         background: rgb(199, 199, 199);
-        padding: 6px;
+        padding: 40px;
     }
 
     .poltrona_ocupada {
@@ -67,7 +69,7 @@
         border: 1px solid black;
         border-radius: 6px;
         background: rgb(194, 2, 2);
-        padding: 6px;
+        padding: 40px;
     }
 
     .poltrona_especial {
@@ -75,7 +77,7 @@
         border: 1px solid black;
         border-radius: 6px;
         background: rgb(12, 1, 164);
-        padding: 6px;
+        padding: 40px;
     }
 }
 
