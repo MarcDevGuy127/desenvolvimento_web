@@ -134,7 +134,9 @@
 }
 
 .secao_superior {
+    margin: 50px;
     text-align: center;
+    margin-left: 500px;
 
     p {
         font-size: larger;
