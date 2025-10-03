@@ -7,9 +7,7 @@
     background-color: rgba(73, 73, 73, 0.645);
 
     span {
-        margin: 25px;
-        /*margem das letras do eixo*/
-        /*align-items: left;*/
+        margin: 45px; /*margem do distanciamento das letras do eixo*/
         justify-items: center;
     }
 }
@@ -70,12 +68,9 @@
     align-items: space-evenly;
     grid-gap: 8px 8px;
 
-    grid-template-rows: repeat(6, 100px);
-    /*dividir em colunas de acordo com a quantidade de divs/elementos no html*/
-    grid-template-columns: repeat(12, 100px);
-    /*repetir de acordo com a quantidade de divs/elementos no html*/
-    margin: 10px;
-    /*margem externa*/
+    grid-template-rows: repeat(6, 100px);    /*dividir em colunas de acordo com a quantidade de divs/elementos no html*/
+    grid-template-columns: repeat(12, 100px);    /*repetir de acordo com a quantidade de divs/elementos no html*/
+    margin: 10px;    /*margem externa*/
 
     .eixo {
         display: grid;
@@ -83,7 +78,7 @@
         grid-column: 1 / 13;
 
         span {
-            grid-row: 1;
+            /*grid-row: 1;*/
             align-self: center;
         }
     }
