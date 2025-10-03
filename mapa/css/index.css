@@ -24,6 +24,7 @@
     gap: 2px;
     /* espaço entre os containers */
     background: gray;
+    border-radius: 12px;
     border: 1px solid black;
 }
 
@@ -55,7 +56,7 @@
     border: 1px solid black;
     background: rgb(199, 199, 199);
     padding: 30px;
-    padding-right: 1240px;
+    padding-right: 1260px;
     grid-row: 7 / 12;
     /*linha / coluna*/
 }
@@ -98,6 +99,9 @@
     font-size: large;
     align-items: center;
     background-color: gainsboro;
+    border-radius: 12px;
+    border: 1px solid black;
+    box-shadow: 10px 10px 35px rgba(0, 0, 0, 0.3); /* deslocamento X, deslocamento Y, desfoque, cor */
     width: max-content;
     font-weight: bold;
 
