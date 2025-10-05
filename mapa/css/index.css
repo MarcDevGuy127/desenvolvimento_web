@@ -31,7 +31,7 @@
     border: 1px solid black;
 }
 
-.poltronas_esquerda .eixo_lateral {
+.poltronas_esquerda {
     grid-column: 1 / 5;
 }
 
