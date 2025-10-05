@@ -171,6 +171,21 @@
     }
 }
 
+.parametros {
+    margin-left: 100px;
+    grid-template-areas: 
+            "parametros" "valor_parametro";
+    font-weight: bold;
+    
+    #parametros {
+        grid-area: parametro;
+    }
+    valor {
+        grid-area: valor_parametro;
+        grid-row: 2;
+    }
+}
+
 .poltrona {
     border: 1px solid black;
     border-radius: 12px;
