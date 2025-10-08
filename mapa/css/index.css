@@ -2,6 +2,10 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+body {
+    background-color: lightgray;
+}
+
 .eixo_superior,
 .eixo_lateral {
     font-size: xx-large;
@@ -191,14 +195,28 @@
     border-radius: 12px;
     background: rgb(199, 199, 199);
     padding: 40px;
+    text-decoration: none;
+}
+.poltrona:hover {
+    border: 2px solid black;
+    font-size: large;
 }
 
 .secao_superior {
-    margin: 50px;
+    margin: 100px;
+    margin-left: 800px;
+    width: max-content;
     text-align: center;
-    margin-left: 500px;
 
     p {
         font-size: larger;
+        font-weight: bold;
     }
+}
+
+footer {
+  background-color: #222;
+  color: #fff;
+  text-align: center;
+  padding: 15px;
 }
