@@ -3,7 +3,7 @@
 }
 
 body {
-    background-color: lightgray;
+    background-color: rgba(211, 211, 211, 0.57);
 }
 
 .eixo_superior,
@@ -30,7 +30,7 @@ body {
     /* espaço entre os containers */
     gap: 2px;
 
-    background: gray;
+    background: rgb(128, 128, 128);
     border-radius: 12px;
     border: 1px solid black;
 }
@@ -121,7 +121,8 @@ body {
         display: grid;
         padding-left: 5px;
         grid-column: 1 / 13;
-
+        margin-left: 5px;
+        margin-right: 5px;
         span {
             /*grid-row: 1;*/
             align-self: center;
@@ -215,8 +216,16 @@ body {
 }
 
 footer {
-  background-color: #222;
-  color: #fff;
-  text-align: center;
-  padding: 15px;
+    display: block;
+    background: black;
+    padding: 15px;
+    color: white;
+    font-size: medium;
+    text-align: center;
+    text-decoration: none;
+}
+footer a:hover {
+    color: aqua;
+    font-weight: bold;
+    text-decoration: underline;
 }
