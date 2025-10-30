@@ -1,0 +1,47 @@
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+nav ul li {
+    float: left;
+}
+
+nav ul li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    background-color: #111111;
+}
+
+.painel {
+    background-color: chocolate;
+}
+
+.painel p {
+    margin: 0;
+    padding: 30px;
+    text-align: justify;
+    color: white;
+}
+
+aside ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+footer {
+    text-align: center;
+    color: white;
+    background-color: cadetblue;
+}
