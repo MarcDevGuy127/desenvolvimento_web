@@ -7,9 +7,9 @@ nav ul {
 }
 
 nav ul li {
-    float: left;
+    float: left; /*flutua links cabecalho pra direcao especifica*/
 }
-
+/*cores: chocolate, 111111, cadetblue, brown*/
 nav ul li a {
     display: block;
     color: white;
@@ -22,8 +22,35 @@ nav ul li a:hover {
     background-color: #111111;
 }
 
+li.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #111111f4;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #1111118c;}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
 .painel {
-    background-color: chocolate;
+    background-color: rgba(162, 125, 125, 0.833);
 }
 
 .painel p {
@@ -43,5 +70,5 @@ aside ul {
 footer {
     text-align: center;
     color: white;
-    background-color: cadetblue;
+    background-color: chocolate;
 }
