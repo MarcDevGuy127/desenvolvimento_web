@@ -34,13 +34,14 @@ li.dropdown {
   position: absolute;
   background-color: #111111f4;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px #00000033;
   z-index: 1;
 }
 
 .dropdown-content a {
   color: white;
-  padding: 12px 16px;
+  font-size: small;
+  padding: 12px 10px;
   text-decoration: none;
   display: block;
   text-align: left;
@@ -59,9 +60,8 @@ li.dropdown {
 
 .painel p {
     margin: 0;
-    padding-left: 30px;
-    padding-right: 30px;
-    text-align: justify;
+    margin-left: 30px;
+    text-align: center;
     color: gray;
 }
 
