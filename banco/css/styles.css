@@ -94,6 +94,10 @@ li.dropdown {
 
 }*/
 
+.painel h1 {
+    text-align: center;
+}
+
 .painel p {
     display: contents;
     margin: 0;
