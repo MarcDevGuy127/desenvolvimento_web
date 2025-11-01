@@ -29,7 +29,8 @@ nav ul li {
 }
 
 /*cores: chocolate, 111111, cadetblue, brown*/
-nav ul li a, .marca {
+nav ul li a,
+.marca {
     display: block;
     color: white;
     text-align: center;
@@ -80,25 +81,44 @@ li.dropdown {
     text-align: center;
 }
 
-/*.painel main {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding: 50px;
-    background: cadetblue;
-    border-radius: 15px;
-    box-shadow: 0px 8px 16px 0px #00000033;
+table {
+    background-color: rgba(84, 84, 84, 0.271);
+    margin: auto;
+    border-radius: 12px;
+    border-collapse: collapse;
+    box-shadow: 0px 0px 20px 0px #00000033;
 }
 
-main div {
-    display: flex;
+table th {
+    padding: 10px 30px;
+    text-align: left;
+}
+
+table tr {
+    text-align: right;
+}
+
+table td {
+    padding: 15px;
+    width: auto;
+}
+
+.painel button{
+    margin-top: 10px;
+    margin-left: 240px;
+    justify-items: center;
     align-items: center;
+    padding: 8px 15px;
+    border-radius: 5px;
+    color: whitesmoke;
+    font-weight: lighter;
+    font-size: small;
+    background-color: blue;
 }
 
-main label {
-    width: 100px;
-    padding-right: 0;
-}*/
+.painel button:hover {
+    background: rgb(15, 10, 61);
+}
 
 aside ul {
     list-style-type: none;
