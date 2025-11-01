@@ -1,0 +1,121 @@
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+    /* ocupa o espaço restante */
+    background-color: #f3eeee;
+    display: flex;
+    align-items: center;
+    /* centraliza verticalmente */
+    justify-content: center;
+    /* centraliza horizontalmente */
+    text-align: center;
+}
+
+nav ul {
+    font-size: medium;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+nav ul li {
+    float: left;
+    /*flutua links cabecalho pra direcao especifica*/
+}
+
+.marca {
+    float: right;
+}
+
+/*cores: chocolate, 111111, cadetblue, brown*/
+nav ul li a, .marca {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    background-color: #111111;
+}
+
+li.dropdown {
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #111111f4;
+    min-width: 100px;
+    box-shadow: 0px 8px 16px 0px #00000033;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: white;
+    font-size: small;
+    padding: 12px 8px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #1111118c;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.painel {
+    padding: 50px;
+    background-color: rgba(162, 125, 125, 0.127);
+}
+
+/*img {
+    margin-right: 0;
+    margin-left: 350px;
+
+}*/
+
+.painel h1 {
+    text-align: center;
+}
+
+.painel p {
+    display: contents;
+    margin: 0;
+    text-align: center;
+    color: gray;
+}
+
+aside ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+footer {
+    padding: 8px 0;
+    font-size: smaller;
+    text-align: center;
+    color: white;
+    background-color: chocolate;
+}
