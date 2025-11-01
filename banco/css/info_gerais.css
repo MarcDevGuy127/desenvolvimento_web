@@ -24,7 +24,7 @@ nav ul li {
     /*flutua links cabecalho pra direcao especifica*/
 }
 
-.marca {
+#marca {
     float: right;
 }
 
@@ -74,9 +74,12 @@ li.dropdown {
 
 .painel {
     display: flex;
-    justify-content: center; /* centraliza horizontalmente */
-    align-items: center;     /* centraliza verticalmente (opcional) */
-    flex-direction: column;  /* mantém os itens empilhados se houver mais de um */
+    justify-content: center;
+    /* centraliza horizontalmente */
+    align-items: center;
+    /* centraliza verticalmente (opcional) */
+    flex-direction: column;
+    /* mantém os itens empilhados se houver mais de um */
     padding: 50px;
     background-color: rgba(162, 125, 125, 0.127);
 }
