@@ -80,7 +80,7 @@ li.dropdown {
     text-align: center;
 }
 
-.painel main {
+/*.painel main {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -98,7 +98,7 @@ main div {
 main label {
     width: 100px;
     padding-right: 0;
-}
+}*/
 
 aside ul {
     list-style-type: none;
