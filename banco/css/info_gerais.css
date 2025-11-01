@@ -73,6 +73,10 @@ li.dropdown {
 }
 
 .painel {
+    display: flex;
+    justify-content: center; /* centraliza horizontalmente */
+    align-items: center;     /* centraliza verticalmente (opcional) */
+    flex-direction: column;  /* mantém os itens empilhados se houver mais de um */
     padding: 50px;
     background-color: rgba(162, 125, 125, 0.127);
 }
@@ -103,21 +107,19 @@ table td {
     width: auto;
 }
 
-.painel button{
+.painel button {
+    border: #111111 solid 1px;
     margin-top: 10px;
-    margin-left: 240px;
-    justify-items: center;
-    align-items: center;
     padding: 8px 15px;
     border-radius: 5px;
     color: whitesmoke;
     font-weight: lighter;
     font-size: small;
-    background-color: blue;
+    background-color: brown;
 }
 
 .painel button:hover {
-    background: rgb(15, 10, 61);
+    background: rgb(129, 33, 33);
 }
 
 aside ul {
