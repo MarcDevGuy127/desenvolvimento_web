@@ -12,7 +12,7 @@
         <li class="dropdown">
           <a href="/pages/info_gerais.html" class="dropbtn">Minha Conta</a>
           <div class="dropdown-content">
-            <a href="info_gerais.html">Informações Gerais</a>
+            <a href="/pages/info_gerais.html">Informações Gerais</a>
             <a href="/pages/login.html">&#x21A9; Sair</a>
           </div>
         </li>
@@ -23,22 +23,24 @@
           </div>
         </li>
         <li class="dropdown">
-          <a href="#" class="dropbtn">Depósito</a>
+          <a href="/pages/depositar.html" class="dropbtn">Depósito</a>
           <div class="dropdown-content">
-            <a href="depositar.html">Depositar</a>
-            <a href="depositos.html">Histórico</a>
+            <a href="/pages/depositar.html">Depositar</a>
+            <a href="/pages/depositos.html">Histórico</a>
           </div>
         </li>
         <li class="dropdown">
-          <a href="saques.html" class="dropbtn">Saque</a>
+          <a href="/pages/saques.html" class="dropbtn">Saque</a>
           <div class="dropdown-content">
-            <a href="saques.html">Histórico</a>
+            <a href="/pages/saques.html">Histórico</a>
           </div>
         </li>
         <li>
-          <a href="contas.html">Contas</a>
+          <a href="/pages/contas.html">Contas</a>
         </li>
-        <li class="dropdown" id="marca"><a href="../index.html">Northwest Bank</a></li>
+        <li class="dropdown" id="marca">
+          <a href="../index.html">Northwest Bank</a>
+        </li>
       </ul>
     </nav>
     <div class="painel">
@@ -77,7 +79,9 @@
           <td>Exemplo<!--?= htmlspecialchars($usuario['complemento']) ?--></td>
         </tr>
       </table>
-      <button type="button">Editar</button>
+      <button type="button" onclick="window.location.href='editar_info.html'">
+        Editar
+      </button>
     </div>
     <footer>&copy; 2025 - Northwest Bank</footer>
   </body>
