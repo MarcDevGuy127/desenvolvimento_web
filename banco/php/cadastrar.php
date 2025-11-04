@@ -27,6 +27,7 @@ try {
 
     if ($stmt->execute()) {
         echo "Cadastro realizado com sucesso!<br>";
+        header("Location: index.html");
     } else {
         echo "Erro ao cadastrar";
     }
