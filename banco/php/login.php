@@ -7,7 +7,7 @@ $senha = ""; // ajuste conforme o seu ambiente
 session_start();
 include('conexao.php');
 if (empty($_POST['email']) || empty($_POST['senha'])) {
-    header('Location: index.php');
+    header('Location: login.php');
     exit();
 }
 $usuario = mysqli_real_escape_string($conexao, $_POST['usuario']);
