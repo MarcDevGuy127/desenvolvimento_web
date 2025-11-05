@@ -2,8 +2,17 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+p {
+    margin: 0;
+}
+
 body {
     background-color: rgba(211, 211, 211, 0.57);
+}
+
+h1 {
+    margin-top: 0;
+    margin-bottom: 10px;
 }
 
 /* eixos */
@@ -126,7 +135,9 @@ body {
     display: flex;
     margin-top: 10px;
     gap: 10px;
-    padding: 10px;
+    padding: 25px;
+    padding-top: 1px;
+    padding-bottom: 2px;
     font-size: large;
     align-items: center;
     background-color: gainsboro;
@@ -141,7 +152,7 @@ body {
         border: 1px solid black;
         border-radius: 6px;
         background: rgb(2, 155, 15);
-        padding: 20px;
+        padding: 30px;
     }
 
     .poltrona_ocupada {
@@ -149,13 +160,13 @@ body {
         border: 1px solid black;
         border-radius: 6px;
         background: rgb(194, 2, 2);
-        padding: 20px;
+        padding: 30px;
     }
 }
 
 /* parâmetros */
 .parametros {
-    margin-left: 100px;
+    margin-left: 40px;
     grid-template-areas:
         "parametros" "valor_parametro";
     font-weight: bold;
