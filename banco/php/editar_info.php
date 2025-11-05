@@ -44,7 +44,7 @@ try {
 
     if ($stmt->execute()) {
         echo "Cadastro atualizado com sucesso!<br>";
-        header("Location: info_gerais.php");
+        header("Location: index.php");
     } else {
         echo "Erro ao atualizar";
     }
