@@ -1,3 +1,27 @@
+<?php
+session_start();
+require_once '../config/conexao.php'; // <-- seu arquivo de conexão PDO
+
+// Verifica se o usuário está logado
+if (!isset($_SESSION['usuario_id'])) {
+    header('Location: ../index.html');
+    exit;
+}
+
+// Busca dados do usuário logado
+$id = $_SESSION['usuario_id'];
+
+$stmt = $pdo->prepare("SELECT * FROM usuarios WHERE id = :id");
+$stmt->bindParam(':id', $id, PDO::PARAM_INT);
+$stmt->execute();
+
+$usuario = $stmt->fetch(PDO::FETCH_ASSOC);
+
+if (!$usuario) {
+    echo "Usuário não encontrado.";
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -48,38 +72,42 @@
       <table border="0" cellspacing="8" cellpadding="5">
         <tr>
           <th>Nome:</th>
-          <td>Exemplo<!--?= htmlspecialchars($usuario['nome']) ?--></td>
+          <td><?= htmlspecialchars($usuario['nome']) ?></td>
         </tr>
         <tr>
           <th>Email:</th>
-          <td>Exemplo<!--?= htmlspecialchars($usuario['email']) ?--></td>
+          <td><?= htmlspecialchars($usuario['email']) ?></td>
         </tr>
         <tr>
           <th>Telefone:</th>
-          <td>Exemplo<!--?= htmlspecialchars($usuario['telefone']) ?--></td>
+          <td><?= htmlspecialchars($usuario['telefone']) ?></td>
         </tr>
         <tr>
           <th>País:</th>
-          <td>Exemplo<!--?= htmlspecialchars($usuario['pais']) ?--></td>
+          <td><?= htmlspecialchars($usuario['pais']) ?></td>
         </tr>
         <tr>
           <th>UF:</th>
-          <td>Exemplo<!--?= htmlspecialchars($usuario['uf']) ?--></td>
+          <td><?= htmlspecialchars($usuario['uf']) ?></td>
         </tr>
         <tr>
           <th>Cidade:</th>
-          <td>Exemplo<!--?= htmlspecialchars($usuario['cidade']) ?--></td>
+          <td><?= htmlspecialchars($usuario['cidade']) ?></td>
         </tr>
         <tr>
           <th>Bairro:</th>
-          <td>Exemplo<!--?= htmlspecialchars($usuario['bairro']) ?--></td>
+          <td><?= htmlspecialchars($usuario['bairro']) ?></td>
         </tr>
         <tr>
           <th>Complemento:</th>
-          <td>Exemplo<!--?= htmlspecialchars($usuario['complemento']) ?--></td>
+          <td><?= htmlspecialchars($usuario['complemento']) ?></td>
         </tr>
       </table>
-      <button type="button" onclick="window.location.href='editar_info.html'">
+
+      <button
+        type="button"
+        onclick="window.location.href='editar_info.php?id=<?= $usuario['id'] ?>'"
+      >
         Editar
       </button>
     </div>
