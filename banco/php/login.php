@@ -5,7 +5,7 @@ $usuario = "root";
 $senha = ""; // ajuste conforme o seu ambiente
 
 session_start();
-include('conexao.php');
+include('conn.php');
 if (empty($_POST['email']) || empty($_POST['senha'])) {
     header('Location: login.php');
     exit();
