@@ -39,7 +39,7 @@
             <?php endforeach; ?>
         </table>
         <div class="sair">
-            <a href="login.php">Sair</a>
+            <a href="index.html">Sair</a>
         </div>
     </div>
  </body>

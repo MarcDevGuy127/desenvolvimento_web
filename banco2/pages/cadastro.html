@@ -10,7 +10,7 @@
     <nav>
       <ul>
         <li class="dropdown">
-          <a href="/index.html"> Sair</a>
+          <a href="../index.html"> Sair</a>
         </li>
         <li class="dropdown" id="marca">
           <a href="#">Northwest Bank</a>
@@ -19,7 +19,7 @@
     </nav>
     <div class="painel">
       <h1>Preenchimento de Cadastro</h1>
-      <form action="/php/editar_info.php" method="POST">
+      <form action="/php/cadastrar.php" method="POST">
         <fieldset>
           <legend>Informações Pessoais</legend>
 
@@ -55,18 +55,16 @@
         <fieldset>
           <legend>Atualizar Senha</legend>
 
-          <!--Adicionar codicional javascript para usuario criar senha com caracteres  especiais, numeros, maiusc/minusc-->
           <label for="senha_usuario">Digite sua nova senha:</label>
           <input type="password" minlength="8" maxlength="12" placeholder="************" required/>
 
           <label for="senha_usuario">Digite novamente:</label>
           <input type="password" id="senha_usuario" name="senha_usuario" minlength="8" maxlength="12" required/>
         </fieldset>
-        <button type="submit" value="editar">Salvar</button>
+        <button type="submit">Salvar</button>
         <button type="reset">Limpar</button>
       </form>
     </div>
     <footer>&copy; 2025 - Northwest Bank</footer>
-    <script src="valida_senha.js"></script>
   </body>
 </html>
