@@ -4,11 +4,11 @@ require_once 'conexao.php';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nome  = $_POST['nome'];
     $email = $_POST['email'];
-    $senha = password_hash($_POST['senha'], PASSWORD_DEFAULT);
+    $senha_usuario = password_hash($_POST['senha_usuario'], PASSWORD_DEFAULT);
 
     try {
-        $stmt = $pdo->prepare("INSERT INTO usuarios (nome, email, senha) VALUES (?, ?, ?)");
-        $stmt->execute([$nome, $email, $senha]);
+        $stmt = $pdo->prepare("INSERT INTO usuarios (nome, email, senha_usuario) VALUES (?, ?, ?)");
+        $stmt->execute([$nome, $email, $senha_usuario]);
 
         // Exibe um alerta e redireciona para index.html
         echo "<script>
