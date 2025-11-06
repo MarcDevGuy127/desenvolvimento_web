@@ -1,33 +1,77 @@
 <?php
 // Conexão com o banco usando PDO
-$dsn = "mysql:host=localhost;dbname=plataforma_banco;charset=utf8";
-$usuario = "root";
-$senha = ""; // ajuste conforme o seu ambiente
+require_once 'config.php';
+
+//sinalizando que os valores do formulario como json
+header('Content-Type: application/json');
+
+//não permitir metodo de requisição diferente
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    echo json_encode(['success' => false, 'message' => 'Método não permitido']);
+    exit;
+}
+
 try {
-    $pdo = new PDO($dsn, $usuario, $senha);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $pdo = getConnection(); //conecta conexão
+
+
     // Receber dados do formulário
-    $nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_SPECIAL_CHARS);
-    $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
-    $telefone = filter_input(INPUT_POST, 'telefone', FILTER_SANITIZE_SPECIAL_CHARS);
-    $pais = filter_input(INPUT_POST, 'pais', FILTER_SANITIZE_SPECIAL_CHARS);
-    $uf = filter_input(INPUT_POST, 'uf', FILTER_SANITIZE_SPECIAL_CHARS);
-    $cidade = filter_input(INPUT_POST, 'cidade', FILTER_SANITIZE_SPECIAL_CHARS);
-    $complemento = filter_input(INPUT_POST, 'bairro', FILTER_SANITIZE_SPECIAL_CHARS);
-    $senha_usuario = filter_input(INPUT_POST, 'senha_usuario', FILTER_SANITIZE_SPECIAL_CHARS);
+    $nome         = sanitize($_POST['nome'] ?? '');
+    $email        = sanitize($_POST['email'] ?? '');
+    $telefone     = sanitize($_POST['telefone'] ?? '');
+    $pais         = sanitize($_POST['pais'] ?? '');
+    $uf           = sanitize($_POST['uf'] ?? '');
+    $cidade       = sanitize($_POST['cidade'] ?? '');
+    $complemento  = sanitize($_POST['bairro'] ?? '');
+    $senha_usuario = sanitize($_POST['senha_usuario'] ?? '');
+
+    /*validando dados obrigatórios
+    $nome = sanitize($_POST['nome'] ?? '');
+    $email = sanitize($_POST['email'] ?? '');
+    $senha = $_POST['senha'] ?? '';
+
 
     #if (sizeof($senha_usuario ) >= 8 || sizeof($senha_usuario ) <= 12) {
         # code...
     #}
-
+    */
     //impedir senhas fora do permitido
-    if (sizeof($senha_usuario ) < 8 || sizeof($senha_usuario ) > 12) {
-        echo '<h1>senha inválida!</h1>';
-        header('Location: index.html');
-        exit();
+        if (empty($nome) || empty($email) || empty($senha)) {
+        echo json_encode(['success' => false, 'message' => 'Nome, email e senha são obrigatórios']);
+        exit;
+    }
+    
+    if (!isValidEmail($email)) {
+        echo json_encode(['success' => false, 'message' => 'Email inválido']);
+        exit;
+    }
+    
+    if (strlen($senha_usuario) < 8 || strlen($senha_usuario) > 12) {
+        echo json_encode(['success' => false, 'message' => 'Senha deve ter pelo menos 8-12 caracteres']);
+        exit;
     }
 
     $hash = password_hash($senha_usuario, PASSWORD_DEFAULT);
+
+
+    // Verificar se email já existe
+    $stmt = $pdo->prepare("SELECT id FROM usuarios WHERE email = ?");
+    $stmt->execute([$email]);
+    
+    // se email existir retorna que esse email está em uso
+    if ($stmt->fetch()) {
+        echo json_encode(['success' => false, 'message' => 'Email já cadastrado']);
+        exit;
+    }
+    /*
+    $empresa = sanitize($_POST['empresa'] ?? '');
+    $telefone = sanitize($_POST['telefone'] ?? '');
+    $endereco = sanitize($_POST['endereco'] ?? '');
+    $cidade = sanitize($_POST['cidade'] ?? '');
+    $estado = sanitize($_POST['estado'] ?? '');
+    $pais = sanitize($_POST['pais'] ?? 'Brasil');
+    $cep = sanitize($_POST['cep'] ?? '');
+    */
 
     // Inserir dados usando prepared statement
     $stmt = $pdo->prepare("INSERT INTO usuarios (nome, email, telefone, pais, uf, cidade, complemento, senha_usuario) VALUES (:nome, :email)");

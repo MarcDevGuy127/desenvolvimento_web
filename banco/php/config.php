@@ -57,10 +57,10 @@ function requireLogin() {
     }
 }
 
-/* Função para sanitizar dados
+// Função para tratar dados
 function sanitize($data) {
     return htmlspecialchars(strip_tags(trim($data)));
-}*/
+}
 
 // Função para validar email
 function isValidEmail($email) {
