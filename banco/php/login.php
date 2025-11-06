@@ -5,7 +5,7 @@ $usuario = "root";
 $senha = ""; // ajuste conforme o seu ambiente
 
 session_start();
-include('conn.php');
+include('conn.php');//tirar conn
 if (empty($_POST['email']) || empty($_POST['senha'])) {
     header('Location: login.php');
     exit();
@@ -20,6 +20,7 @@ $row = mysqli_num_rows($result);
 //verifica login
 if ($row == 1) {
     $_SESSION['usuario'] = $usuario;
+    $_SESSION['senha'] = $senha;
     header('Location: painel.php');
     exit();
 } else {
