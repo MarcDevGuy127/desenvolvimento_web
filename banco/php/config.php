@@ -52,15 +52,15 @@ function isLoggedIn() {
 // Função para redirecionar se não estiver logado
 function requireLogin() {
     if (!isLoggedIn()) {
-        header('Location: ../index.html');
+        header('Location: ../index.html');//se não logado vai para a tela de login
         exit;
     }
 }
 
-// Função para sanitizar dados
+/* Função para sanitizar dados
 function sanitize($data) {
     return htmlspecialchars(strip_tags(trim($data)));
-}
+}*/
 
 // Função para validar email
 function isValidEmail($email) {
@@ -68,12 +68,12 @@ function isValidEmail($email) {
 }
 
 // Função para gerar hash de senha
-function hashPassword($password) {
-    return password_hash($password, PASSWORD_DEFAULT);
+function hashPassword($senha) {
+    return password_hash($senha, PASSWORD_DEFAULT);
 }
 
 // Função para verificar senha
-function verifyPassword($password, $hash) {
-    return password_verify($password, $hash);
+function verifyPassword($senha, $hash) {
+    return password_verify($senha, $hash);
 }
 ?>
