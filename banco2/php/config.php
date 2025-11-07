@@ -1,4 +1,5 @@
 <?php
+//definindo config
 define('DB_HOST', 'localhost');
 define('DB_NAME', 'plataforma_banco');
 define('DB_USER', 'root');
