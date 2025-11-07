@@ -1,22 +1,42 @@
 <?php
 session_start();
-require_once 'conexao.php';
+require_once 'config.php';
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $email = $_POST['email'];
-    $senha = $_POST['senha'];
+$mensagem = '';
 
-    $stmt = $pdo->prepare("SELECT * FROM usuarios WHERE email = ?");
-    $stmt->execute([$email]);
-    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $email = trim($_POST['email']);
+    $senha_usuario = $_POST['senha_usuario'];
 
-    if ($user && password_verify($senha, $user['senha'])) {
-        $_SESSION['usuario_id'] = $user['id'];
-        $_SESSION['usuario_nome'] = $user['nome'];
-        header('Location: ../pages/tela_inicial.html');
-        exit;
+    // Correção: usar a mesma variável do formulário
+    if (empty($email) || empty($senha_usuario)) {
+        $mensagem = "Por favor, preencha todos os campos!";
     } else {
-        echo "<p>Login inválido!</p><a href='../index.html'>Tentar novamente</a>";
+        // Buscar usuário pelo email
+        $sql = "SELECT * FROM usuarios WHERE email = ?";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute([$email]);
+        $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
+        
+        // Correção: usar $senha_usuario que vem do formulário
+        if ($usuario && password_verify($senha_usuario, $usuario['senha_usuario'])) {
+            // Login bem-sucedido
+            $_SESSION['usuario_id'] = $usuario['id'];
+            $_SESSION['nome'] = $usuario['nome'];
+            $_SESSION['email'] = $usuario['email'];
+            $_SESSION['logado'] = true;
+            
+            // Correção: redirecionar para o PHP, não para HTML
+            header("Location: ../pages/tela_inicial.php");
+            exit();
+        } else {
+            $mensagem = "Email ou senha incorretos!";
+        }
     }
+}
+
+// Se houver mensagem de erro, mostra no HTML
+if (!empty($mensagem)) {
+    echo "<script>alert('$mensagem'); window.location.href = '../index.html';</script>";
 }
 ?>
