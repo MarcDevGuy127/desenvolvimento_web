@@ -1,0 +1,9 @@
+1. Abra o XAMPP e rode os módulos: Apache e MySQL
+2. Vá para o PHPAdmin e crie um database com um nome ex:teste_login, na configuração padrão.
+3. Em seguida, acessa a pagina do terminal SQL e rode o código SQL.
+4. Interaja com o site e acompanhe os registros de cadastro no PHPAdmin.
+5. Na lista de banco de dados, clique no banco teste_login e depois clique na tabela usuarios.
+6. Você verá a tabela com todas as colunas criadas no códigos.
+7. Para ver os dados inseridos e atualizados, recarregue a página.
+8. Se quiser limpar os dados inseridos, clique no nome do banco(teste_login), selecione a tabela usuarios 
+e clique na opção Limpar na mesma linha.
