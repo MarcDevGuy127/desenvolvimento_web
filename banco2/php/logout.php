@@ -1,6 +1,15 @@
 <?php
+
+//mecanismo do logout
 session_start();
+
+// apaga todas as variáveis de sessão
+//$_SESSION = array();
+
+// encerra a sessão
 session_destroy();
-header('Location: ../index.html');
+
+// redireciona para a página inicial
+header("Location: ../index.html");
 exit;
 ?>

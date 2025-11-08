@@ -1,63 +1,58 @@
 <?php
+//4. criando session
 session_start();
-// Verificar se o usuário está logado
-if (!isset($_SESSION['logado']) || $_SESSION['logado'] !== true) {
-    header("Location: ../index.html");
-    exit();
+if (!isset($_SESSION['email'])) {
+    header("Location: login.php");
+    exit;
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Banco</title>
-    <link rel="stylesheet" href="/css/tela_inicial.css" />
-  </head>
-  <body>
-    <nav>
-      <ul>
-        <li class="dropdown">
-          <a href="/php/info_gerais.php" class="dropbtn">Minha Conta</a>
-          <div class="dropdown-content">
-            <a href="info_gerais.html">Informações Gerais</a>
-            <a href="../php/logout.php">&#x21A9; Sair</a>
-          </div>
-        </li>
-        <li class="dropdown">
-          <a href="saldo.html" class="dropbtn">Consultar</a>
-          <div class="dropdown-content">
-            <a href="saldo.html">Saldo</a>
-          </div>
-        </li>
-        <li class="dropdown">
-          <a href="#" class="dropbtn">Depósito</a>
-          <div class="dropdown-content">
-            <a href="depositar.html">Depositar</a>
-            <a href="depositos.html">Histórico</a>
-          </div>
-        </li>
-        <li class="dropdown">
-          <a href="saques.html" class="dropbtn">Saque</a>
-          <div class="dropdown-content">
-            <a href="saques.html">Histórico</a>
-          </div>
-        </li>
-        <li>
-          <a href="contas.html">Contas</a>
-        </li>
-        <li class="dropdown" id="marca"><a href="../tela_inicial.php">Northwest Bank</a></li>
-      </ul>
-    </nav>
-    <div class="painel">
-      <h1>Olá, <?php echo isset($_SESSION['nome']) ? $_SESSION['nome'] : 'Usuário'; ?>!</h1>
-      <main>
-        <p>
-          Seja bem-vindo ao painel bancário, deposite, saque ou consulte o seu
-          saldo.
-        </p>
-      </main>
-    </div>
-    <footer>&copy; 2025 - Northwest Bank</footer>
-  </body>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        * {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        main {
+            flex: 1;
+            /* ocupa o espaço restante */
+            background-color: #f3eeee;
+            display: flex;
+            align-items: center;
+            /* centraliza verticalmente */
+            justify-content: center;
+            /* centraliza horizontalmente */
+            text-align: center;
+        }
+
+        a {
+            margin-left: 20px;
+            background-color: #ff4b2b;
+            color: white;
+            text-decoration: none;
+            padding: 10px 25px;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+
+        a:hover {
+            background-color: #ff6a4d;
+        }
+    </style>
+    <main>
+        <h2>Olá, <?php echo htmlspecialchars($_SESSION['email']); ?>!</h2>
+        <a href="../php/logout.php">Sair</a>
+    </main>
+</body>
+
 </html>
