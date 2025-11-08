@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // Verifica a senha (comparando com a hash do banco)
         if (password_verify($senha_usuario, $usuario['senha_usuario'])) {
             $_SESSION['email'] = $usuario['email'];
-            header("Location: ../pages/tela_inicial.php");
+            header("Location: ../php/tela_inicial.php");
             exit;
         } else {
             echo "<script>alert('Senha incorreta!'); window.location.href = '../index.html';</script>";
