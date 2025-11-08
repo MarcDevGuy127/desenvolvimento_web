@@ -1,4 +1,6 @@
 <?php
+
+//mecanismo do logout
 session_start();
 
 // apaga todas as variáveis de sessão
