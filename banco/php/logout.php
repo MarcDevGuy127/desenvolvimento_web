@@ -1,10 +1,15 @@
 <?php
-require_once 'config.php';
 
-// Destruir sessão e sair
+//mecanismo do logout
+session_start();
+
+// apaga todas as variáveis de sessão
+//$_SESSION = array();
+
+// encerra a sessão
 session_destroy();
 
-// Redirecionar para página de login
-header('Location: ../index.html');
+// redireciona para a página inicial
+header("Location: ../index.html");
 exit;
 ?>

@@ -1,38 +1,40 @@
 <?php
-// conexão com o banco usando PDO
 require_once 'config.php';
-
-//iniciar sessao
 session_start();
 
-//notifica se algum campo em login.html estiver vazio.
-if (empty($_POST['email']) || empty($_POST['senha'])) {
-    header('Location: index.html');
-    echo '<h6>Usuário/Senha incorretos!</h6>';
+$mensagem = '';
 
-    exit();
-}
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $email = trim($_POST['email']);
+    $senha_usuario = trim($_POST['senha_usuario']);
 
-$usuario = mysqli_real_escape_string($conexao, $_POST['usuario']);
-$senha = md5($_POST['senha']);
-$query = "SELECT usuario FROM usuarios WHERE usuario = '{$usuario}' AND senha = 
-'{$senha}'";
-$result = mysqli_query($conexao, $query);
-$row = mysqli_num_rows($result);
+    // Verifica se os campos foram preenchidos
+    if (empty($email) || empty($senha_usuario)) {
+        echo "<script>alert('Por favor, preencha todos os campos!'); window.location.href = '../index.html';</script>";
+        exit;
+    }
 
-//verifica se login existe
-if ($row == 1) {
-    $_SESSION['usuario'] = $usuario;
-    $_SESSION['senha'] = $senha;
-    
-    //se sim, usuario acessa a tela dele.
-    header('Location: painel.html');
-    exit();
-} else {
-    $_SESSION['nao_autenticado'] = true;
+    // Busca o usuário pelo email
+    $stmt = $pdo->prepare("SELECT * FROM usuarios WHERE email = :email");
+    $stmt->bindParam(':email', $email);
+    $stmt->execute();
 
-    //se não, usuario retorna a tela de login. 
-    header('Location: index.php');
-    exit();
+    // Se encontrou o usuário
+    if ($stmt->rowCount() > 0) {
+        $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        // Verifica a senha (comparando com a hash do banco)
+        if (password_verify($senha_usuario, $usuario['senha_usuario'])) {
+            $_SESSION['email'] = $usuario['email'];
+            header("Location: ../php/tela_inicial.php");
+            exit;
+        } else {
+            echo "<script>alert('Senha incorreta!'); window.location.href = '../index.html';</script>";
+            exit;
+        }
+    } else {
+        echo "<script>alert('Usuário não encontrado!'); window.location.href = '../index.html';</script>";
+        exit;
+    }
 }
 ?>
