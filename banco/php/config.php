@@ -1,79 +1,62 @@
 <?php
-// arquivo php destinado para configurações.
-// Definindo constantes de conexão com o banco
-define('DB_HOST', 'localhost');      // especificando servidor local XAMPP
-define('DB_USER', 'root');           // especificando usuário padrão do MySQL no XAMPP
-define('DB_PASS', '');               // especificando senha de acesso ao banco padrão (vazia)
-define('DB_NAME', 'plataforma_banco');      // especificando nome do banco
-
-/*
-// configurações de constantes extras
-
-// Configurações de email
-define('SMTP_HOST', '');
-define('SMTP_PORT', 'numeroaqui');
-define('SMTP_USER', '');
-define('SMTP_PASS', '');
-define('SMTP_FROM', '');
-define('SMTP_FROM_NAME', 'nomeaqui');
-
-// Configurações gerais
-define('SITE_URL', 'https://site.com.br');
-define('UPLOAD_PATH', 'pasta'); */
+//definindo config
+define('DB_HOST', 'localhost');
+define('DB_NAME', 'plataforma_banco');
+define('DB_USER', 'root');
+define('DB_PASS', '');
 
 // Iniciar sessão
 session_start();
 
-// Função para conectar ao banco de dados
 function getConnection() {
     try {
-        $pdo = new PDO(
-            "mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=utf8mb4",
-            DB_USER,
-            DB_PASS,
-            [
-                PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-                PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-                PDO::ATTR_EMULATE_PREPARES => false
-            ]
-        );
-        return $pdo;
+        $pdo = new PDO("mysql:host=".DB_HOST.";dbname=".DB_NAME.";charset=utf8",
+        DB_USER,
+        DB_PASS,
+        [
+            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+            PDO::ATTR_EMULATE_PREPARES => false
+        ]
+    );
+    return $pdo;
+    //metodo anterior de: $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     } catch (PDOException $e) {
-        error_log("Erro de conexão: " . $e->getMessage());
-        die("Erro de conexão com o banco de dados");
+        error_log("Erro de conexão: " . $e->getMessage()); //log de erros
+        die("Erro na conexão: " . $e->getMessage());
     }
 }
 
 // Função para verificar se o usuário está logado
-function isLoggedIn() {
-    return isset($_SESSION['usuario']);
+function estaLogado() {
+    return isset($_SESSION['email']);
 }
 
 // Função para redirecionar se não estiver logado
-function requireLogin() {
-    if (!isLoggedIn()) {
-        header('Location: ../index.html');//se não logado vai para a tela de login
+function solicitaLogin() {
+    if (!estaLogado()) {
+        header('Location: ../index.html');
         exit;
     }
 }
 
-// Função para tratar dados
-function sanitize($data) {
-    return htmlspecialchars(strip_tags(trim($data)));
+// Função para sanitizar dado
+function tratar($dado) {
+    return htmlspecialchars(strip_tags(trim($dado)));
 }
 
 // Função para validar email
-function isValidEmail($email) {
+function emailValido($email) {
     return filter_var($email, FILTER_VALIDATE_EMAIL);
 }
 
 // Função para gerar hash de senha
-function hashPassword($senha) {
-    return password_hash($senha, PASSWORD_DEFAULT);
+function hashSenha($senha_usuario) {
+    return password_hash($senha_usuario, PASSWORD_DEFAULT);
 }
 
 // Função para verificar senha
-function verifyPassword($senha, $hash) {
-    return password_verify($senha, $hash);
+function verificaSenha($senha_usuario, $hash) {
+    return password_verify($senha_usuario, $hash);
 }
 ?>
