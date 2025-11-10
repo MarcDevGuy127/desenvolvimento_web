@@ -1,3 +1,5 @@
+<?
+/*
 <?php
 // Conexão com o banco usando PDO
 $dsn = "mysql:host=localhost;dbname=plataforma_banco;charset=utf8";
@@ -52,3 +54,5 @@ try {
     echo "Erro de conexão: " . $e->getMessage();
 }
 ?>
+*/
+php?>

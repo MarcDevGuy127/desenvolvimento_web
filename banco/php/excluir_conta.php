@@ -1,5 +1,5 @@
  <?php
- // Conexão com o banco usando PDO
+ /* Conexão com o banco usando PDO
  $dsn = "mysql:host=localhost;dbname=plataforma_banco;charset=utf8";
  $usuario = "root";
  $senha = ""; // ajuste conforme o seu ambiente
@@ -19,5 +19,5 @@
     }
  } catch (PDOException $e) {
     echo "Erro de conexão: " . $e->getMessage();
- }
+ }*/
  ?>

@@ -10,7 +10,7 @@
     <nav>
       <ul>
         <li class="dropdown">
-          <a href="/index.html"> Sair</a>
+          <a href="../index.html"> Sair</a>
         </li>
         <li class="dropdown" id="marca">
           <a href="#">Northwest Bank</a>
@@ -19,7 +19,7 @@
     </nav>
     <div class="painel">
       <h1>Preenchimento de Cadastro</h1>
-      <form action="/php/editar_info.php" method="POST">
+      <form action="../php/cadastrar.php" method="POST">
         <fieldset>
           <legend>Informações Pessoais</legend>
 
@@ -28,45 +28,17 @@
 
           <label for="email">Email:</label>
           <input type="email" id="email" name="email" placeholder="email@email.com" required />
-
-          <label for="telefone">Telefone:</label>
-          <input type="tel" id="telefone" name="telefone" maxlength="11" placeholder="41900000000" required/>
-        </fieldset>
-
-        <fieldset>
-          <legend>Endereço</legend>
-
-          <label for="pais">País:</label>
-          <input type="text" id="pais" name="pais" value="Brasil" required/>
-
-          <label for="uf">UF:</label>
-          <input type="text" id="uf" name="uf" maxlength="2" placeholder="PR" required/>
-
-          <label for="cidade">Cidade:</label>
-          <input type="text" id="cidade" name="cidade" placeholder="Curitiba" required/>
-
-          <label for="bairro">Bairro:</label>
-          <input type="text" id="bairro" name="bairro" placeholder="Jardim das Américas" required/>
-
-          <label for="complemento">Complemento:</label>
-          <input type="text" id="complemento" name="complemento" placeholder="Av. Victor Ferreira" required/>
         </fieldset>
 
         <fieldset>
           <legend>Atualizar Senha</legend>
-
-          <!--Adicionar codicional javascript para usuario criar senha com caracteres  especiais, numeros, maiusc/minusc-->
-          <label for="senha_usuario">Digite sua nova senha:</label>
-          <input type="password" minlength="8" maxlength="12" placeholder="************" required/>
-
-          <label for="senha_usuario">Digite novamente:</label>
+          <label for="senha_usuario">Digite a senha:</label>
           <input type="password" id="senha_usuario" name="senha_usuario" minlength="8" maxlength="12" required/>
         </fieldset>
-        <button type="submit" value="editar">Salvar</button>
+        <button type="submit">Salvar</button>
         <button type="reset">Limpar</button>
       </form>
     </div>
     <footer>&copy; 2025 - Northwest Bank</footer>
-    <script src="valida_senha.js"></script>
   </body>
 </html>

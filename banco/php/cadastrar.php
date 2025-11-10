@@ -1,5 +1,4 @@
 <?php
-// trazendo conexão com o banco
 require_once 'config.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -26,32 +25,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit;
     }
 }
-
-/*
-try {
-    $pdo = getConnection(); //conecta conexão
-
-
-    // Receber dados do formulário
-    $nome          = $_POST['nome'];
-    $email         = $_POST['email'];
-    $telefone      = $_POST['telefone'];
-    $pais          = $_POST['pais'];
-    $uf            = $_POST['uf'];
-    $cidade        = $_POST['cidade'];
-    $complemento   = $_POST['complemento'];
-    $senha_usuario = $_POST['senha_usuario'];
-
-    /* Inserir dados usando prepared statement
-    $stmt = $pdo->prepare("INSERT INTO usuarios (nome, email, telefone, pais, uf, cidade, complemento, senha_usuario) VALUES (:nome, :email)");
-    $stmt->bindParam(':nome', $nome);
-    $stmt->bindParam(':email', $email);
-    $stmt->bindParam(':telefone', $telefone);
-    $stmt->bindParam(':pais', $pais);
-    $stmt->bindParam(':uf', $uf);
-    $stmt->bindParam(':cidade', $cidade);
-    $stmt->bindParam(':complemento', $complemento);
-    $stmt->bindParam(':senha_usuario', $senha_usuario);
-
-*/
 ?>
