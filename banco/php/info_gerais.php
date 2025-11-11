@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once '../config/config.php'; // <-- seu arquivo de conexão PDO
+require_once '../php/config.php'; // <-- seu arquivo de conexão PDO
 
 // Verifica se o usuário está logado
 if (!isset($_SESSION['id'])) {
