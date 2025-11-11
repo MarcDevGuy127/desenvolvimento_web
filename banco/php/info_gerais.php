@@ -4,7 +4,7 @@ require_once '../php/config.php'; // <-- seu arquivo de conexão PDO
 
 // Verifica se o usuário está logado
 if (!isset($_SESSION['id'])) {
-    header('Location: ../index.html');
+    header(header: 'Location: ../index.html');
     exit;
 }
 
