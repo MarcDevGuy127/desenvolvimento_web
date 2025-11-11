@@ -1,40 +1,40 @@
 <?php
-require_once 'config.php';
 session_start();
+require_once 'config.php';
 
 $mensagem = '';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = trim($_POST['email']);
-    $senha_usuario = trim($_POST['senha_usuario']);
+    $senha_usuario = $_POST['senha_usuario'];
 
-    // Verifica se os campos foram preenchidos
     if (empty($email) || empty($senha_usuario)) {
-        echo "<script>alert('Por favor, preencha todos os campos!'); window.location.href = '../index.html';</script>";
-        exit;
-    }
-
-    // Busca o usuário pelo email
-    $stmt = $pdo->prepare("SELECT * FROM usuarios WHERE email = :email");
-    $stmt->bindParam(':email', $email);
-    $stmt->execute();
-
-    // Se encontrou o usuário
-    if ($stmt->rowCount() > 0) {
-        $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
-
-        // Verifica a senha (comparando com a hash do banco)
-        if (password_verify($senha_usuario, $usuario['senha_usuario'])) {
-            $_SESSION['email'] = $usuario['email'];
-            header("Location: ../php/tela_inicial.php");
-            exit;
-        } else {
-            echo "<script>alert('Senha incorreta!'); window.location.href = '../index.html';</script>";
-            exit;
-        }
+        $mensagem = "Por favor, preencha todos os campos!";
     } else {
-        echo "<script>alert('Usuário não encontrado!'); window.location.href = '../index.html';</script>";
-        exit;
+        // Buscar usuário pelo email
+        $sql = "SELECT * FROM usuarios WHERE email = ?";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute([$email]);
+        $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
+        
+        if ($usuario && password_verify($senha_usuario, $usuario['senha_usuario'])) {
+            // Login bem-sucedido
+            $_SESSION['id'] = $usuario['id'];
+            $_SESSION['nome'] = $usuario['nome'];
+            $_SESSION['email'] = $usuario['email'];
+            $_SESSION['logado'] = true;
+            
+            header("Location: ../php/tela_inicial.php");
+            exit();
+        } else {
+            $mensagem = "Email ou senha incorretos!";
+        }
     }
+}
+
+// Se houver mensagem de erro, mostra no HTML
+if (!empty($mensagem)) {
+    echo "<script>alert('$mensagem'); window.location.href = '../index.html';</script>";
+    exit();
 }
 ?>
