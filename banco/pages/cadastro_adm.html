@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Banco</title>
+    <link rel="stylesheet" href="../css/cadastro_adm.css" />
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li class="dropdown">
+          <a href="../index.html"> Sair</a>
+        </li>
+        <li class="dropdown" id="marca">
+          <a href="#">Northwest Bank</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="painel">
+      <h1>Preenchimento de Cadastro Administrador</h1>
+      <form action="../php/cadastrar_adm.php" method="POST">
+        <fieldset>
+          <legend>Informações Pessoais</legend>
+
+          <label for="nome">Nome:</label>
+          <input type="text" id="nome" name="nome" placeholder="Marcos Paulo" required />
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" placeholder="email@email.com" required />
+          
+          <label for="telefone">Telefone:</label>
+          <input type="tel" id="telefone" name="telefone" placeholder="111111111111" required />        
+        </fieldset>
+
+        <fieldset>
+          <legend>Definição de Senha</legend>
+
+          <label for="senha_usuario">Digite a senha:</label>
+          <input type="password" placeholder="************" minlength="8" maxlength="12" required/>
+
+          <label for="senha_usuario">Digite novamente:</label>
+          <input type="password" id="senha_usuario" name="senha_usuario" minlength="8" maxlength="12" required/>
+        </fieldset>
+        <button type="submit">Salvar</button>
+        <button type="reset">Limpar</button>
+      </form>
+    </div>
+    <footer>&copy; 2025 - Northwest Bank</footer>
+  </body>
+</html>
