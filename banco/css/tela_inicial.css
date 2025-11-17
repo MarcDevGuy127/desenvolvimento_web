@@ -11,8 +11,6 @@ body {
 }
 
 main {
-    flex: 1;
-    /* ocupa o espaço restante */
     background-color: #f3eeee;
     display: flex;
     align-items: center;
@@ -84,6 +82,7 @@ li.dropdown {
 }
 
 .painel {
+    flex: 1;
     padding: 50px;
     background-color: rgba(162, 125, 125, 0.127);
 }
