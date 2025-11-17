@@ -123,12 +123,16 @@ label {
 
 input {
     width: 100%;
-    padding: 0 50px;
     box-sizing: border-box;
     grid-column: span 1;
     margin-top: 5px;
     padding-left: 0;
 }
+
+/*input[type="text"] {
+    width: 100%;
+    box-sizing: border-box;
+}*/
 
 .painel button {
     float: right;
