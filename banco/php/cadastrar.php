@@ -1,5 +1,5 @@
 <?php
-require_once 'config.php';
+require_once '../php/config.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nome  = $_POST['nome'];
@@ -10,52 +10,86 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $cidade = $_POST['cidade'];
     $bairro = $_POST['bairro'];
     $complemento = $_POST['complemento'];
-    $senha = password_hash($_POST['senha'], PASSWORD_DEFAULT);
-    $confirma_senha = password_hash($_POST['confirma_senha'], PASSWORD_DEFAULT);
+    $senha = $_POST['senha'];
+    $confirma_senha = $_POST['confirma_senha'];
+
+    if ($senha == $confirma_senha) {
+
+        $senha = password_hash($senha, PASSWORD_DEFAULT);
+        echo "
+        <script>
+            alert('As senhas não coincidem. Tente novamente.');
+        </script>";
+        exit;
+    }
 
     if ($senha !== $confirma_senha) {
-        echo "alert('As senhas não coincidem. Tente novamente.')";
+        echo "
+        <script>
+            alert('As senhas não coincidem. Tente novamente.');
+        </script>";
         exit;
     }
 
     if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        echo "alert('O email informado é inválido. Tente novamente.')";
+        echo "
+        <script>
+            alert('O email informado é inválido. Tente novamente.');
+        </script>";
         exit;
     }
 
     if (empty($telefone) || !filter_var($telefone, FILTER_SANITIZE_SPECIAL_CHARS)) {
-        echo "alert('O telefone informado é inválido. Tente novamente.')";
+        echo "
+        <script>
+            alert('O telefone informado é inválido. Tente novamente.');
+        </script>";
         exit;
     }
 
     if (empty($pais) || !filter_var($pais, FILTER_SANITIZE_SPECIAL_CHARS)) {
-        echo "alert('O país informado é inválido. Tente novamente.')";
+        echo "
+        <script>
+            alert('O país informado é inválido. Tente novamente.');
+        </script>";
         exit;
     }
 
     if (empty($uf) || !filter_var($uf, FILTER_SANITIZE_SPECIAL_CHARS)) {
-        echo "alert('A unidade federativa informada é inválida. Tente novamente.')";
+        echo "
+        <script>
+            alert('A unidade federativa informada é inválida. Tente novamente.');
+        </script>";
         exit;
     }
 
     if (empty($cidade) || !filter_var($cidade, FILTER_SANITIZE_SPECIAL_CHARS)) {
-        echo "alert('A cidade informada é inválida. Tente novamente.')";
+        echo "
+        <script>
+            alert('A cidade informada é inválida. Tente novamente.');
+        </script>";
         exit;
     }
 
     if (empty($bairro) || !filter_var($bairro, FILTER_SANITIZE_SPECIAL_CHARS)) {
-        echo "alert('O bairro informado é inválido. Tente novamente.')";
+        echo "
+        <script>
+            alert('O bairro informado é inválido. Tente novamente.');
+        </script>";
         exit;
     }
 
     if (empty($complemento) || !filter_var($complemento, FILTER_SANITIZE_SPECIAL_CHARS)) {
-        echo "alert('O complemento informado é inválido. Tente novamente.')";
+        echo "
+        <script>
+            alert('O complemento informado é inválido. Tente novamente.');
+        </script>";
         exit;
     }
 
     try {
-        $stmt = $pdo->prepare("INSERT INTO usuario (nome, email, senha, confirma_senha) VALUES (?, ?, ?, ?)");
-        $stmt->execute([$nome, $email, $senha, $confirma_senha]);
+        $stmt = $pdo->prepare("INSERT INTO usuario (nome, email, telefone, pais, uf, cidade, bairro, complemento, senha, confirma_senha) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        $stmt->execute([$nome, $email, $telefone, $pais, $uf, $cidade, $bairro, $complemento, $senha, $confirma_senha]);
 
         // exibindo um alert de conclusão e redirecionando para index.html
         echo "<script>
