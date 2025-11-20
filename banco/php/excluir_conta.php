@@ -9,7 +9,7 @@
     // Receber id via GET ou POST (exemplo usando GET)
     $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
     // Deletar usuário usando prepared statement
-    $stmt = $pdo->prepare("DELETE FROM usuarios WHERE id = :id");
+    $stmt = $pdo->prepare("DELETE FROM usuario WHERE id = :id");
     $stmt->bindParam(':id', $id);
     if ($stmt->execute()) {
         echo "Usuário deletado com sucesso!<br>";

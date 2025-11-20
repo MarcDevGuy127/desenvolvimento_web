@@ -7,7 +7,7 @@
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
     // Consulta usando retorno como objeto
-    $stmt = $pdo->query("SELECT * FROM usuarios");
+    $stmt = $pdo->query("SELECT * FROM usuario");
     $usuarios = $stmt->fetchAll(PDO::FETCH_OBJ);
  } catch(PDOException $e) {
     echo "Erro de conexão: " . $e->getMessage();

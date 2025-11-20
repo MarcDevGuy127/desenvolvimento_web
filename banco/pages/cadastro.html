@@ -37,7 +37,7 @@
           <legend>Endereço</legend>
 
           <label for="pais">País:</label>
-          <input type="text" id="pais" name="pais" placeholder="Brasil" max="20" required />
+          <input type="text" id="pais" name="pais" value="Brasil" placeholder="Brasil" maxlength="35" required />
 
           <label for="uf">UF:</label>
           <input type="text" id="uf" name="uf" placeholder="PR" minlength="2" maxlength="2" required />
@@ -56,11 +56,11 @@
         <fieldset>
           <legend>Definição de Senha</legend>
 
-          <label for="senha_usuario">Digite a senha:</label>
-          <input type="password" id="senha_usuario" name="senha_usuario" minlength="8" maxlength="12" required/>
+          <label for="senha">Digite a senha:</label>
+          <input type="password" id="senha" name="senha" minlength="8" maxlength="12" required/>
 
-          <label for="senha_usuario">Digite novamente:</label>
-          <input type="password" id="senha_usuario" name="senha_usuario" minlength="8" maxlength="12" required/>
+          <label for="confirma_senha">Digite novamente:</label>
+          <input type="password" id="confirma_senha" name="senha_usuario" minlength="8" maxlength="12" required/>
         </fieldset>
         <button type="submit">Salvar</button>
         <button type="reset">Limpar</button>

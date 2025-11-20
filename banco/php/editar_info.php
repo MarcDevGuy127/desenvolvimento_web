@@ -19,7 +19,7 @@ try {
 
     // Atualizar dados usando prepared statement
     $stmt = $pdo->prepare("
-    UPDATE usuarios 
+    UPDATE usuario 
     SET 
         nome = :nome,
         email = :email,

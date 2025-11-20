@@ -11,7 +11,7 @@ if (!isset($_SESSION['id'])) {
 // Busca dados do usuário logado
 $id = $_SESSION['id'];
 
-$stmt = $pdo->prepare("SELECT nome, email, telefone, pais, uf, cidade, bairro, complemento FROM usuarios WHERE id = :id");
+$stmt = $pdo->prepare("SELECT nome, email, telefone, pais, uf, cidade, bairro, complemento FROM usuario WHERE id = :id");
 $stmt->bindParam(':id', $id, PDO::PARAM_INT);
 $stmt->execute();
 
