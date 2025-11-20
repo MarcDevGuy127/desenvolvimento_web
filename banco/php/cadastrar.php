@@ -36,12 +36,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $complemento = filter_var($complemento, FILTER_SANITIZE_SPECIAL_CHARS);
 
     // gerando hash seguro
-    $hash = password_hash($senha, PASSWORD_DEFAULT);
+    $senha_hash = password_hash($senha, PASSWORD_DEFAULT);
 
     //efetuando registro do usuário
     try {
         $stmt = $pdo->prepare("INSERT INTO usuario (nome, email, telefone, pais, uf, cidade, bairro, complemento, senha) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
-        $stmt->execute([$nome, $email, $telefone, $pais, $uf, $cidade, $bairro, $complemento, $hash]);
+        $stmt->execute([$nome, $email, $telefone, $pais, $uf, $cidade, $bairro, $complemento, $senha_hash]);
 
         echo "<script>alert('Cadastro realizado com sucesso!');window.location.href = '../index.html';</script>";
         exit;
