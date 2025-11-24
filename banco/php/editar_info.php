@@ -1,42 +1,47 @@
 <?php
-session_start();
-require_once '../php/config.php';
+session_start(); // iniciando sessão de usuário
+require_once '../php/config.php'; // refenciando arquivo config
 
-
+// coletando id do usuário
 $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
 
 // verificando se o usuário está logado
 if (!isset($_SESSION['id'])) {
-    $id = $_SESSION['id'];
+  $id = $_SESSION['id'];
 }
 
-// buscando dados do usuário logado
+// buscando dados através do id do usuário logado
 $id = $_SESSION['id'];
 
 try {
-    $stmt = $pdo->prepare("SELECT nome, email, telefone, pais, uf, cidade, bairro, complemento FROM usuario WHERE id = :id");
-    $stmt->bindValue(':id', $id, PDO::PARAM_INT);
-    $stmt->execute();
+  // executando query de seleção de dados do usuário logado através do seu id
+  $stmt = $pdo->prepare("SELECT id, nome, email, telefone, pais, uf, cidade, bairro, complemento FROM usuario WHERE id = :id");
+  $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+  $stmt->execute();
 
-    $dadosUsuario = $stmt->fetch(PDO::FETCH_ASSOC);
+  // dadosUsuario representa o fetch/inclusão dos dados atualizados no banco
+  $dadosUsuario = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    if (!$dadosUsuario) {
-        echo "<p>Usuário não encontrado.</p>";
-        exit;
-    }
+  // caso não for possível efetuar a atualização o usuário não será encontrado
+  if (!$dadosUsuario) {
+    echo "<p>Usuário não encontrado.</p>";
+    exit;
+  }
 
 } catch (PDOException $e) {
-    echo "Erro ao buscar dados: " . $e->getMessage();
-}    
+  echo "Erro ao buscar dados: " . $e->getMessage();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Banco</title>
     <link rel="stylesheet" href="../css/editar_info.css" />
   </head>
+
   <body>
     <nav>
       <ul>
@@ -76,37 +81,39 @@ try {
     </nav>
     <div class="painel">
       <h1>Edição de Informações Gerais</h1>
-      <form action="atualizar_info.php" method="POST">
+      <form action="atualizar.php" method="POST">
+      <input type="hidden" name="id" value="<?= $dadosUsuario['id'] ?>">
+
         <fieldset>
           <legend>Informações Pessoais</legend>
 
           <label for="nome">Nome:</label>
-          <input type="text" id="nome" name="nome" placeholder="Marcos Paulo" required />
+          <input type="text" id="nome" name="nome" value="<?= htmlspecialchars($dadosUsuario['nome']) ?>" required />
 
           <label for="email">Email:</label>
-          <input type="email" id="email" name="email" placeholder="email@email.com" required />
+          <input type="email" id="email" name="email" value="<?= htmlspecialchars($dadosUsuario['email']) ?>" required />
 
           <label for="telefone">Telefone:</label>
-          <input type="tel" id="telefone" name="telefone" maxlength="11" placeholder="00000000000" required/>
+          <input type="tel" id="telefone" name="telefone" maxlength="11" value="<?= htmlspecialchars($dadosUsuario['telefone']) ?>" required />
         </fieldset>
 
         <fieldset>
           <legend>Endereço</legend>
 
           <label for="pais">País:</label>
-          <input type="text" id="pais" name="pais" placeholder="Brasil" required/>
+          <input type="text" id="pais" name="pais" value="<?= htmlspecialchars($dadosUsuario['pais']) ?>" required />
 
           <label for="uf">UF:</label>
-          <input type="text" id="uf" name="uf" maxlength="2" placeholder="PR" required/>
+          <input type="text" id="uf" name="uf" maxlength="2" value="<?= htmlspecialchars($dadosUsuario['uf']) ?>" required />
 
           <label for="cidade">Cidade:</label>
-          <input type="text" id="cidade" name="cidade" placeholder="Curitiba" required/>
+          <input type="text" id="cidade" name="cidade" value="<?= htmlspecialchars($dadosUsuario['cidade']) ?>" required />
 
           <label for="bairro">Bairro:</label>
-          <input type="text" id="bairro" name="bairro" placeholder="Jardim das Américas" required/>
+          <input type="text" id="bairro" name="bairro" value="<?= htmlspecialchars($dadosUsuario['bairro']) ?>" required />
 
           <label for="complemento">Complemento:</label>
-          <input type="text" id="complemento" name="complemento" placeholder="Av. Victor Ferreira" required/>
+          <input type="text" id="complemento" name="complemento" value="<?= htmlspecialchars($dadosUsuario['complemento']) ?>" required />
         </fieldset>
         <button type="submit" value="editar">Salvar</button>
         <button type="reset">Limpar</button>

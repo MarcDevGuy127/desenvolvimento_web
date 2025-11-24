@@ -8,16 +8,19 @@ if (!isset($_SESSION['id'])) {
     exit;
 }
 
-// buscando dados do usuário logado
+// buscando dados do usuário logado pelo seu id
 $id = $_SESSION['id'];
 
+// realizando a query de seleção dos dados do usuário cadastrados no banco
 $stmt = $pdo->prepare("SELECT nome, email, telefone, pais, uf, cidade, bairro, complemento FROM usuario WHERE id = :id");
 $stmt->bindParam(':id', $id, PDO::PARAM_INT);
 $stmt->execute();
 
-$usuario = $stmt->fetch(PDO::FETCH_ASSOC);
+// dadosUsuario representa o fetch/inclusão dos dados atualizados no banco
+$dadosUsuario = $stmt->fetch(PDO::FETCH_ASSOC);
 
-if (!$usuario) {
+// caso não for possível efetuar a atualização o usuário não será encontrado
+if (!$dadosUsuario) {
     echo "Usuário não encontrado.";
     exit;
 }
