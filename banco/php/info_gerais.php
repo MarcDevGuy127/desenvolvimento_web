@@ -104,9 +104,9 @@ if (!$usuario) {
           <td><?= htmlspecialchars($usuario['complemento']) ?></td>
         </tr>
       </table>
-      <button type="button" onclick="window.location.href='editar_info.html'">
-        Editar
-      </button>
+      <a href="../pages/editar_info.html">
+        <button>Editar</button>
+      </a>
     </div>
     <footer>&copy; 2025 - Northwest Bank</footer>
   </body>
