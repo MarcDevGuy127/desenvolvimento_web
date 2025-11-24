@@ -35,10 +35,10 @@ if (!$usuario) {
     <nav>
       <ul>
         <li class="dropdown">
-          <a href="/php/info_gerais.php" class="dropbtn">Minha Conta</a>
+          <a href="../php/info_gerais.php" class="dropbtn">Minha Conta</a>
           <div class="dropdown-content">
-            <a href="/php/info_gerais.php">Informações Gerais</a>
-            <a href="/index.html">&#x21A9; Sair</a>
+            <a href="../php/info_gerais.php">Informações Gerais</a>
+            <a href="../index.html">&#x21A9; Sair</a>
           </div>
         </li>
         <li class="dropdown">
@@ -104,7 +104,7 @@ if (!$usuario) {
           <td><?= htmlspecialchars($usuario['complemento']) ?></td>
         </tr>
       </table>
-      <a href="../pages/editar_info.html">
+      <a href="../php/editar_info.php">
         <button>Editar</button>
       </a>
     </div>

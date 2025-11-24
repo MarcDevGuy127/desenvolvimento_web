@@ -1,54 +1,117 @@
 <?php
-// Conexão com o banco usando PDO
-$dsn = "mysql:host=localhost;dbname=plataforma_banco;charset=utf8";
-$usuario = "root";
-$senha = ""; // ajuste conforme o seu ambiente
+session_start();
+require_once '../php/config.php';
+
+
+$id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
+
+// verificando se o usuário está logado
+if (!isset($_SESSION['id'])) {
+    $id = $_SESSION['id'];
+}
+
+// buscando dados do usuário logado
+$id = $_SESSION['id'];
+
 try {
-    $pdo = new PDO($dsn, $usuario, $senha);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-    // Receber dados do formulário
-    $id = filter_input(INPUT_POST, 'id', FILTER_VALIDATE_INT);
-    $nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_SPECIAL_CHARS);
-    $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
-    $telefone = filter_input(INPUT_POST, 'telefone', FILTER_SANITIZE_SPECIAL_CHARS);
-    $pais = filter_input(INPUT_POST, 'pais', FILTER_SANITIZE_SPECIAL_CHARS);
-    $uf = filter_input(INPUT_POST, 'uf', FILTER_SANITIZE_SPECIAL_CHARS);
-    $cidade = filter_input(INPUT_POST, 'cidade', FILTER_SANITIZE_SPECIAL_CHARS);
-    $complemento = filter_input(INPUT_POST, 'bairro', FILTER_SANITIZE_SPECIAL_CHARS);
-
-    // Atualizar dados usando prepared statement
-    $stmt = $pdo->prepare("
-    UPDATE usuario 
-    SET 
-        nome = :nome,
-        email = :email,
-        telefone = :telefone,
-        pais = :pais,
-        uf = :uf,
-        cidade = :cidade,
-        complemento = :complemento
-    WHERE id = :id
-    ");
-
-    $stmt->bindParam(':id', $id);
-    $stmt->bindParam(':nome', $nome);
-    $stmt->bindParam(':email', $email);
-    $stmt->bindParam(':telefone', $telefone);
-    $stmt->bindParam(':pais', $pais);
-    $stmt->bindParam(':uf', $uf);
-    $stmt->bindParam(':cidade', $cidade);
-    $stmt->bindParam(':complemento', $complemento);
-
+    $stmt = $pdo->prepare("SELECT nome, email, telefone, pais, uf, cidade, bairro, complemento FROM usuario WHERE id = :id");
+    $stmt->bindValue(':id', $id, PDO::PARAM_INT);
     $stmt->execute();
 
-    if ($stmt->execute()) {
-        echo "Cadastro atualizado com sucesso!<br>";
-        header("Location: index.php");
-    } else {
-        echo "Erro ao atualizar";
+    $dadosUsuario = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if (!$dadosUsuario) {
+        echo "<p>Usuário não encontrado.</p>";
+        exit;
     }
+
 } catch (PDOException $e) {
-    echo "Erro de conexão: " . $e->getMessage();
-}
+    echo "Erro ao buscar dados: " . $e->getMessage();
+}    
 ?>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Banco</title>
+    <link rel="stylesheet" href="../css/editar_info.css" />
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li class="dropdown">
+          <a href="/php/info_gerais.php" class="dropbtn">Minha Conta</a>
+          <div class="dropdown-content">
+            <a href="/php/info_gerais.php">Informações Gerais</a>
+            <a href="../index.html">&#x21A9; Sair</a>
+          </div>
+        </li>
+        <li class="dropdown">
+          <a href="saldo.html" class="dropbtn">Consultar</a>
+          <div class="dropdown-content">
+            <a href="saldo.html">Saldo</a>
+          </div>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropbtn">Depósito</a>
+          <div class="dropdown-content">
+            <a href="depositar.html">Depositar</a>
+            <a href="depositos.html">Histórico</a>
+          </div>
+        </li>
+        <li class="dropdown">
+          <a href="saques.html" class="dropbtn">Saque</a>
+          <div class="dropdown-content">
+            <a href="saques.html">Histórico</a>
+          </div>
+        </li>
+        <li>
+          <a href="contas.html">Contas</a>
+        </li>
+        <li class="dropdown" id="marca">
+          <a href="../index.html">Northwest Bank</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="painel">
+      <h1>Edição de Informações Gerais</h1>
+      <form action="atualizar_info.php" method="POST">
+        <fieldset>
+          <legend>Informações Pessoais</legend>
+
+          <label for="nome">Nome:</label>
+          <input type="text" id="nome" name="nome" placeholder="Marcos Paulo" required />
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" placeholder="email@email.com" required />
+
+          <label for="telefone">Telefone:</label>
+          <input type="tel" id="telefone" name="telefone" maxlength="11" placeholder="00000000000" required/>
+        </fieldset>
+
+        <fieldset>
+          <legend>Endereço</legend>
+
+          <label for="pais">País:</label>
+          <input type="text" id="pais" name="pais" placeholder="Brasil" required/>
+
+          <label for="uf">UF:</label>
+          <input type="text" id="uf" name="uf" maxlength="2" placeholder="PR" required/>
+
+          <label for="cidade">Cidade:</label>
+          <input type="text" id="cidade" name="cidade" placeholder="Curitiba" required/>
+
+          <label for="bairro">Bairro:</label>
+          <input type="text" id="bairro" name="bairro" placeholder="Jardim das Américas" required/>
+
+          <label for="complemento">Complemento:</label>
+          <input type="text" id="complemento" name="complemento" placeholder="Av. Victor Ferreira" required/>
+        </fieldset>
+        <button type="submit" value="editar">Salvar</button>
+        <button type="reset">Limpar</button>
+      </form>
+    </div>
+    <footer>&copy; 2025 - Northwest Bank</footer>
+  </body>
+</html>
