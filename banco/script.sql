@@ -1,0 +1,23 @@
+CREATE DATABASE plataforma_banco;
+USE plataforma_banco;
+
+CREATE TABLE usuario (
+	id INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(255) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    telefone VARCHAR(12) NOT NULL,
+    pais VARCHAR(35) NOT NULL,
+    uf CHAR(2) NOT NULL,
+    cidade VARCHAR(35) NOT NULL,
+    bairro VARCHAR(35) NOT NULL,
+    complemento VARCHAR(150) NOT NULL,
+    senha VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE adm (
+	id INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    telefone VARCHAR(12) NOT NULL,
+    senha VARCHAR(12) NOT NULL
+);
