@@ -38,7 +38,7 @@ try {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Banco</title>
+    <title>Administração - Northwest Bank</title>
     <link rel="stylesheet" href="../css/editar_info.css" />
   </head>
 
@@ -48,40 +48,24 @@ try {
         <li class="dropdown">
           <a href="/php/info_gerais.php" class="dropbtn">Minha Conta</a>
           <div class="dropdown-content">
-            <a href="/php/info_gerais.php">Informações Gerais</a>
+            <a href="/php/info_gerais_adm.php">Informações Gerais</a>
             <a href="../index.html">&#x21A9; Sair</a>
           </div>
         </li>
         <li class="dropdown">
           <a href="saldo.html" class="dropbtn">Consultar</a>
           <div class="dropdown-content">
-            <a href="saldo.html">Saldo</a>
+            <a href="/php/listar.php">Lista de Usuários</a>
           </div>
-        </li>
-        <li class="dropdown">
-          <a href="#" class="dropbtn">Depósito</a>
-          <div class="dropdown-content">
-            <a href="depositar.html">Depositar</a>
-            <a href="depositos.html">Histórico</a>
-          </div>
-        </li>
-        <li class="dropdown">
-          <a href="saques.html" class="dropbtn">Saque</a>
-          <div class="dropdown-content">
-            <a href="saques.html">Histórico</a>
-          </div>
-        </li>
-        <li>
-          <a href="contas.html">Contas</a>
         </li>
         <li class="dropdown" id="marca">
-          <a href="../index.html">Northwest Bank</a>
+          <a href="../php/tela_adm.php">Administração - Northwest Bank</a>
         </li>
       </ul>
     </nav>
     <div class="painel">
       <h1>Edição de Informações Administrador</h1>
-      <form action="atualizar.php" method="POST">
+      <form action="atualizar_adm.php" method="POST">
       <input type="hidden" name="id" value="<?= $dadosAdministrador['id'] ?>">
 
         <fieldset>

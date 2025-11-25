@@ -11,7 +11,7 @@ if (!isset($_SESSION['id'])) {
 // buscando dados do usuário logado pelo seu id
 $id = $_SESSION['id'];
 
-// realizando a query de seleção dos dados do usuário cadastrados no banco
+// realizando a query de seleção dos dados do usuário cadastrado no banco
 $stmt = $pdo->prepare("SELECT nome, email, telefone, pais, uf, cidade, bairro, complemento FROM usuario WHERE id = :id");
 $stmt->bindParam(':id', $id, PDO::PARAM_INT);
 $stmt->execute();
@@ -76,35 +76,35 @@ if (!$dadosUsuario) {
       <table border="0" cellspacing="8" cellpadding="5">
         <tr>
           <th>Nome:</th>
-          <td><?= htmlspecialchars($usuario['nome']) ?></td>
+          <td><?= htmlspecialchars($dadosUsuario['nome']) ?></td>
         </tr>
         <tr>
           <th>Email:</th>
-          <td><?= htmlspecialchars($usuario['email']) ?></td>
+          <td><?= htmlspecialchars($dadosUsuario['email']) ?></td>
         </tr>
         <tr>
           <th>Telefone:</th>
-          <td><?= htmlspecialchars($usuario['telefone']) ?></td>
+          <td><?= htmlspecialchars($dadosUsuario['telefone']) ?></td>
         </tr>
         <tr>
           <th>País:</th>
-          <td><?= htmlspecialchars($usuario['pais']) ?></td>
+          <td><?= htmlspecialchars($dadosUsuario['pais']) ?></td>
         </tr>
         <tr>
           <th>UF:</th>
-          <td><?= htmlspecialchars($usuario['uf']) ?></td>
+          <td><?= htmlspecialchars($dadosUsuario['uf']) ?></td>
         </tr>
         <tr>
           <th>Cidade:</th>
-          <td><?= htmlspecialchars($usuario['cidade']) ?></td>
+          <td><?= htmlspecialchars($dadosUsuario['cidade']) ?></td>
         </tr>
         <tr>
           <th>Bairro:</th>
-          <td><?= htmlspecialchars($usuario['bairro']) ?></td>
+          <td><?= htmlspecialchars($dadosUsuario['bairro']) ?></td>
         </tr>
         <tr>
           <th>Complemento:</th>
-          <td><?= htmlspecialchars($usuario['complemento']) ?></td>
+          <td><?= htmlspecialchars($dadosUsuario['complemento']) ?></td>
         </tr>
       </table>
       <a href="../php/editar_info.php">

@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once 'config.php';
+require_once 'config.php'; // ajuste se necessário
 
 $mensagem = '';
 
@@ -16,29 +16,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } else {
 
         // buscar usuário por email
-        $sql = "SELECT * FROM usuario WHERE email = ?";
+        $sql = "SELECT * FROM adm WHERE email = ?";
         $stmt = $pdo->prepare($sql);
         $stmt->execute([$email]);
-        $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
+        $adm = $stmt->fetch(PDO::FETCH_ASSOC);
 
         // depuração opcional:
         /*
         var_dump($email);
         var_dump($senha);
-        var_dump($usuario['senha'] ?? null);
+        var_dump($adm['senha'] ?? null);
         exit;
         */
 
         // validar login
-        if ($usuario && password_verify($senha, $usuario['senha'])) {
+        if ($adm && password_verify($senha, $adm['senha'])) {
 
             // criar sessão
-            $_SESSION['id'] = $usuario['id'];
-            $_SESSION['nome'] = $usuario['nome'];
-            $_SESSION['email'] = $usuario['email'];
+            $_SESSION['id'] = $adm['id'];
+            $_SESSION['nome'] = $adm['nome'];
+            $_SESSION['email'] = $adm['email'];
             $_SESSION['logado'] = true;
 
-            header("Location: tela_inicial.php");
+            header("Location: tela_adm.php");
             exit;
 
         } else {
@@ -49,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 // exibir erro e voltar ao início
 if (!empty($mensagem)) {
-    echo "<script>alert('$mensagem'); window.location.href = '../index.html';</script>";
+    echo "<script>alert('$mensagem'); window.location.href = '../pages/tela_login_adm.html';</script>";
     exit;
 }
 ?>

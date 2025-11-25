@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     //efetuando registro do usuário
     try {
-        $stmt = $pdo->prepare("INSERT INTO usuario (nome, email, telefone, senha) VALUES (?, ?, ?, ?)");
+        $stmt = $pdo->prepare("INSERT INTO adm (nome, email, telefone, senha) VALUES (?, ?, ?, ?)");
         $stmt->execute([$nome, $email, $telefone, $senha_hash]);
 
         echo "<script>alert('Cadastro realizado com sucesso!');window.location.href = '../index.html';</script>";
