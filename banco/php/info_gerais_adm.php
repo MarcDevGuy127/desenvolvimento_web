@@ -32,7 +32,7 @@ if (!$dadosAdministrador) {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Banco</title>
-    <link rel="stylesheet" href="../css/info_gerais.css" />
+    <link rel="stylesheet" href="../css/info_gerais_adm.css" />
   </head>
   <body>
     <nav>
@@ -60,15 +60,15 @@ if (!$dadosAdministrador) {
       <table border="0" cellspacing="8" cellpadding="5">
         <tr>
           <th>Nome:</th>
-          <td><?= htmlspecialchars($adm['nome']) ?></td>
+          <td><?= htmlspecialchars($dadosAdministrador['nome']) ?></td>
         </tr>
         <tr>
           <th>Email:</th>
-          <td><?= htmlspecialchars($adm['email']) ?></td>
+          <td><?= htmlspecialchars($dadosAdministrador['email']) ?></td>
         </tr>
         <tr>
           <th>Telefone:</th>
-          <td><?= htmlspecialchars($adm['telefone']) ?></td>
+          <td><?= htmlspecialchars($dadosAdministrador['telefone']) ?></td>
         </tr>
       </table>
       <a href="../php/editar_info_adm.php">

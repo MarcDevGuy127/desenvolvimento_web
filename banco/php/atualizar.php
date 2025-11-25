@@ -16,7 +16,7 @@ $complemento = filter_input(INPUT_POST, 'complemento', FILTER_SANITIZE_SPECIAL_C
 if (!$id || !$nome || !$email) {
     echo "<script>
         alert('Dados inválidos.');
-        window.location.href = 'editar_info.php?id=$id';
+        window.location.href = '../php/editar_info.php?id=$id';
     </script>";
     exit;
 }
@@ -34,7 +34,7 @@ try {
     if ($verifica->rowCount() > 0) {
         echo "<script>
             alert('Este e-mail já está em uso por outro usuário.');
-            window.location.href = 'editar_info.php?id=$id';
+            window.location.href = '../php/editar_info.php?id=$id';
         </script>";
         exit;
     }
@@ -63,7 +63,7 @@ try {
     // mensagem de que os dados foram atualizados!
     echo "<script>
         alert('Dados atualizados com sucesso!');
-        window.location.href = '../pages/tela_inicial.html';
+        window.location.href = '../pages/tela_adm.html';
     </script>";
 
 } catch (PDOException $e) {

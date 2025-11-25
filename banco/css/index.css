@@ -21,6 +21,7 @@ nav ul {
 
 nav ul li {
     float: right;
+    /*flutua links cabecalho pra direcao especifica*/
 }
 
 nav ul li a {
@@ -76,7 +77,8 @@ header {
 
 .painel {
     display: flex;
-    flex: 1; /*empurra footer para baixo*/
+    flex: 1;
+    /*empurra footer para baixo*/
     justify-content: center;
     /* centraliza horizontalmente */
     align-items: center;
@@ -128,7 +130,7 @@ form a {
 }
 
 footer {
-/*margin-top*/
+    /*margin-top*/
     padding: 8px 0;
     font-size: smaller;
     text-align: center;

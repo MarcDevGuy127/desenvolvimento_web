@@ -15,7 +15,7 @@ $id = $_SESSION['id'];
 
 try {
   // executando query de seleção de dados do usuário logado através do seu id
-  $stmt = $pdo->prepare("SELECT id, nome, email, telefone FROM adm WHERE id = :id");
+  $stmt = $pdo->prepare("SELECT id, nome, email, telefone, senha FROM adm WHERE id = :id");
   $stmt->bindValue(':id', $id, PDO::PARAM_INT);
   $stmt->execute();
 
@@ -39,7 +39,7 @@ try {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Administração - Northwest Bank</title>
-    <link rel="stylesheet" href="../css/editar_info.css" />
+    <link rel="stylesheet" href="../css/editar_info_adm.css" />
   </head>
 
   <body>
@@ -65,7 +65,7 @@ try {
     </nav>
     <div class="painel">
       <h1>Edição de Informações Administrador</h1>
-      <form action="atualizar_adm.php" method="POST">
+      <form action="../php/atualizar_adm.php" method="POST">
       <input type="hidden" name="id" value="<?= $dadosAdministrador['id'] ?>">
 
         <fieldset>
@@ -78,17 +78,17 @@ try {
           <input type="email" id="email" name="email" value="<?= htmlspecialchars($dadosAdministrador['email']) ?>" required />
 
           <label for="telefone">Telefone:</label>
-          <input type="tel" id="telefone" name="telefone" maxlength="11" value="<?= htmlspecialchars($dadosAdministrador['telefone']) ?>" required />
+          <input type="tel" id="telefone" name="telefone" minlength="11" maxlength="12" value="<?= htmlspecialchars($dadosAdministrador['telefone']) ?>" required />
         </fieldset>
 
         <fieldset>
           <legend>Trocar Senha</legend>
 
           <label for="senha">Digite uma nova senha:</label>
-          <input type="text" id="senha" name="senha" placeholder="<?= htmlspecialchars($dadosAdministrador['senha']) ?>" required />
+          <input type="text" id="senha" name="senha" minlength="8" maxlength="12" required />
 
           <label for="confirma_senha">Digite novamente:</label>
-          <input type="text" id="confirma_senha" name="confirma_senha" required />
+          <input type="text" id="confirma_senha" name="confirma_senha" minlength="8" maxlength="12" required />
         </fieldset>
         <button type="submit" value="editar">Salvar</button>
         <button type="reset">Limpar</button>

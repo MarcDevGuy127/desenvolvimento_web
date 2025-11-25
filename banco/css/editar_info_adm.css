@@ -89,33 +89,55 @@ li.dropdown {
     text-align: center;
 }
 
-table {
-    background-color: rgba(84, 84, 84, 0.271);
-    margin: auto;
-    border: solid 1px;
-    border-collapse: collapse;
-    box-shadow: 10px 0px 30px 10px #00000033;
+form {
+    flex-direction: column;
+    gap: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 10px;
+    border: solid;
+    background: #33333329;
 }
 
-table th {
-    padding: 10px 30px;
-    text-align: left;
+fieldset {
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 10px;
+    display: grid;
+    /*grade*/
+    grid-template-columns: 1fr 1fr;
+    /*50% + 50%*/
+    gap: 10px 20px;
 }
 
-table tr {
-    text-align: right;
+legend {
+    font-weight: bold;
+    padding: 0 10px;
 }
 
-table td {
-    padding: 15px;
-    width: auto;
+label {
+    font-weight: 500;
+    display: block;
+    margin-bottom: 4px;
+}
+
+input {
+    width: 100%;
+    padding: 0 50px;
+    box-sizing: border-box;
+    grid-column: span 1;
+    margin-top: 5px;
+    padding-left: 0;
 }
 
 .painel button {
+    float: right;
+    border: 1px solid #2b6cb0;
     cursor: pointer;
     border: #111111 solid 1px;
-    margin-top: 10px;
-    padding: 8px 15px;
+    margin: 5px;
+    padding: 5px 10px;
     border-radius: 5px;
     color: whitesmoke;
     font-weight: lighter;
@@ -125,13 +147,6 @@ table td {
 
 .painel button:hover {
     background: rgb(129, 33, 33);
-}
-
-aside ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
 }
 
 footer {
