@@ -123,7 +123,6 @@ label {
 
 input {
     width: 100%;
-    padding: 0 50px;
     box-sizing: border-box;
     grid-column: span 1;
     margin-top: 5px;
