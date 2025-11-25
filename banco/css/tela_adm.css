@@ -10,6 +10,16 @@ body {
     min-height: 100vh;
 }
 
+main {
+    background-color: #f3eeee;
+    display: flex;
+    align-items: center;
+    /* centraliza verticalmente */
+    justify-content: center;
+    /* centraliza horizontalmente */
+    text-align: center;
+}
+
 nav ul {
     font-size: medium;
     list-style-type: none;
@@ -29,8 +39,7 @@ nav ul li {
 }
 
 /*cores: chocolate, 111111, cadetblue, brown*/
-nav ul li a,
-.marca {
+nav ul li a, .marca {
     display: block;
     color: white;
     text-align: center;
@@ -73,79 +82,33 @@ li.dropdown {
 }
 
 .painel {
-    display: flex;
     flex: 1;
-    justify-content: center;
-    /* centraliza horizontalmente */
-    align-items: center;
-    /* centraliza verticalmente (opcional) */
-    flex-direction: column;
-    /* mantém os itens empilhados se houver mais de um */
     padding: 50px;
     background-color: rgba(162, 125, 125, 0.127);
 }
+
+/*img {
+    margin-right: 0;
+    margin-left: 350px;
+
+}*/
 
 .painel h1 {
     text-align: center;
 }
 
-form {
-    flex-direction: column;
-    gap: 20px;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 10px;
-    border-radius: 10px;
-    border: solid;
-    background: #33333329;
+.painel p {
+    display: contents;
+    margin: 0;
+    text-align: center;
+    color: gray;
 }
 
-fieldset {
-    border: 1px solid;
-    border-radius: 5px;
-    padding: 10px;
-    display: grid;
-    /*grade*/
-    grid-template-columns: 1fr 1fr;
-    /*50% + 50%*/
-    gap: 10px 20px;
-}
-
-legend {
-    font-weight: bold;
-    padding: 0 10px;
-}
-
-label {
-    font-weight: 500;
-    display: block;
-    margin-bottom: 4px;
-}
-
-input {
-    width: 100%;
-    box-sizing: border-box;
-    grid-column: span 1;
-    margin-top: 5px;
-    padding-left: 0;
-}
-
-.painel button {
-    float: right;
-    border: 1px solid #2b6cb0;
-    cursor: pointer;
-    border: #111111 solid 1px;
-    margin: 5px;
-    padding: 5px 10px;
-    border-radius: 5px;
-    color: whitesmoke;
-    font-weight: lighter;
-    font-size: small;
-    background-color: brown;
-}
-
-.painel button:hover {
-    background: rgb(129, 33, 33);
+aside ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
 }
 
 footer {

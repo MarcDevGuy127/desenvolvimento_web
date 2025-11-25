@@ -30,17 +30,17 @@
           <input type="email" id="email" name="email" placeholder="email@email.com" required />
           
           <label for="telefone">Telefone:</label>
-          <input type="tel" id="telefone" name="telefone" placeholder="111111111111" required />        
+          <input type="tel" id="telefone" name="telefone" placeholder="111111111111" minlength="11" maxlength="11" required />        
         </fieldset>
 
         <fieldset>
           <legend>Definição de Senha</legend>
 
-          <label for="senha_usuario">Digite a senha:</label>
-          <input type="password" placeholder="************" minlength="8" maxlength="12" required/>
+          <label for="senha">Digite a senha:</label>
+          <input type="password" id="senha" name="senha" placeholder="************" minlength="8" maxlength="12" required/>
 
-          <label for="senha_usuario">Digite novamente:</label>
-          <input type="password" id="senha_usuario" name="senha_usuario" minlength="8" maxlength="12" required/>
+          <label for="confirma_senha">Digite novamente:</label>
+          <input type="password" id="confirma_senha" name="confirma_senha" minlength="8" maxlength="12" required/>
         </fieldset>
         <button type="submit">Salvar</button>
         <button type="reset">Limpar</button>
