@@ -9,12 +9,12 @@ if (!isset($_SESSION['id'])) {
 }
 
 try {
-    // Recebe filtros
+    // implementando filtros de busca
     $busca = filter_input(INPUT_GET, 'busca', FILTER_SANITIZE_SPECIAL_CHARS) ?? '';
     $ordem = filter_input(INPUT_GET, 'ordem', FILTER_SANITIZE_SPECIAL_CHARS) ?? 'nome';
     $orientacao = filter_input(INPUT_GET, 'orientacao', FILTER_SANITIZE_SPECIAL_CHARS) ?? 'ASC';
 
-    // Colunas e ordenações permitidas
+    // colunas e ordenações permitidas
     $colunas = ['id', 'nome', 'email'];
     $filtros = ['ASC', 'DESC'];
 
