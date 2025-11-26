@@ -28,7 +28,7 @@ try {
 <html lang="pt-br">
     <head>
         <meta charset="UTF-8">
-        <title>Editar Usuário</title>
+        <title>Editar Usuário - Northwest Bank</title>
         <link rel="stylesheet" href="../css/editar_usuarios.css" />
     </head>
 

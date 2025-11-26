@@ -77,13 +77,13 @@ li.dropdown {
     flex: 1;
     justify-content: center; /* centraliza horizontalmente */
     align-items: center; /* centraliza verticalmente (opcional) */
-    flex-direction: row;
+    flex-direction: column;
     /* mantém os itens empilhados se houver mais de um */
     padding: 50px;
     background-color: rgba(162, 125, 125, 0.127);
 }
 
-.painel h1 {
+h1 {
     text-align: center;
 }
 
@@ -122,7 +122,7 @@ label {
 
 input {
     width: 100%;
-    padding: 0 50px;
+    padding: 0;
     box-sizing: border-box;
     grid-column: span 1;
     margin-top: 5px;

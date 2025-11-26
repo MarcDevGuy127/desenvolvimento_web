@@ -38,7 +38,7 @@ try {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Banco</title>
+    <title>Northwest Bank</title>
     <link rel="stylesheet" href="../css/editar_info.css" />
   </head>
 
@@ -49,11 +49,11 @@ try {
           <a href="/php/info_gerais.php" class="dropbtn">Minha Conta</a>
           <div class="dropdown-content">
             <a href="/php/info_gerais.php">Informações Gerais</a>
-            <a href="../index.html">&#x21A9; Sair</a>
+            <a href="../php/logout.php">&#x21A9; Sair</a>
           </div>
         </li>
         <li class="dropdown">
-          <a href="saldo.html" class="dropbtn">Consultar</a>
+          <a href="#" class="dropbtn">Consultar</a>
           <div class="dropdown-content">
             <a href="#">Saldo</a>
           </div>

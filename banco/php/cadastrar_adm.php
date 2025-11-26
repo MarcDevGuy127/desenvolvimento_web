@@ -33,10 +33,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt = $pdo->prepare("INSERT INTO adm (nome, email, telefone, senha) VALUES (?, ?, ?, ?)");
         $stmt->execute([$nome, $email, $telefone, $senha_hash]);
 
-        echo "<script>alert('Cadastro realizado com sucesso!');window.location.href = '../index.html';</script>";
+        // redirecionando para a pagina de login
+        echo "<script>alert('Cadastro realizado com sucesso!');window.location.href = '../pages/tela_login_adm.html';</script>";
         exit;
 
     } catch (PDOException $e) {
+
+        // informando erro de cadastro
         echo "<script>alert('Erro ao cadastrar: " . addslashes($e->getMessage()) . "'); window.history.back();</script>";
         exit;
     }

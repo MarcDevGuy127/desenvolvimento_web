@@ -46,16 +46,16 @@ try {
     <nav>
       <ul>
         <li class="dropdown">
-          <a href="/php/info_gerais.php" class="dropbtn">Minha Conta</a>
+          <a href="../php/info_gerais.php" class="dropbtn">Minha Conta</a>
           <div class="dropdown-content">
-            <a href="/php/info_gerais_adm.php">Informações Gerais</a>
-            <a href="../index.html">&#x21A9; Sair</a>
+            <a href="../php/info_gerais_adm.php">Informações Gerais</a>
+            <a href="../php/logout.php">&#x21A9; Sair</a>
           </div>
         </li>
         <li class="dropdown">
-          <a href="saldo.html" class="dropbtn">Consultar</a>
+          <a href="../php/listar.php" class="dropbtn">Consultar</a>
           <div class="dropdown-content">
-            <a href="/php/listar.php">Lista de Usuários</a>
+            <a href="../php/listar.php">Lista de Usuários</a>
           </div>
         </li>
         <li class="dropdown" id="marca">
@@ -66,6 +66,7 @@ try {
     <div class="painel">
       <h1>Edição de Informações Administrador</h1>
       <form action="../php/atualizar_adm.php" method="POST">
+
       <input type="hidden" name="id" value="<?= $dadosAdministrador['id'] ?>">
 
         <fieldset>
@@ -85,10 +86,10 @@ try {
           <legend>Trocar Senha</legend>
 
           <label for="senha">Digite uma nova senha:</label>
-          <input type="text" id="senha" name="senha" minlength="8" maxlength="12" required />
+          <input type="password" id="senha" name="senha" minlength="8" maxlength="12" required />
 
           <label for="confirma_senha">Digite novamente:</label>
-          <input type="text" id="confirma_senha" name="confirma_senha" minlength="8" maxlength="12" required />
+          <input type="password" id="confirma_senha" name="confirma_senha" minlength="8" maxlength="12" required />
         </fieldset>
         <button type="submit" value="editar">Salvar</button>
         <button type="reset">Limpar</button>

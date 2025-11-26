@@ -2,7 +2,7 @@
 //4. criando session
 session_start();
 if (!isset($_SESSION['email'])) {
-    header("Location: login_adm.php");
+    header("Location: tela_login_adm.php");
     exit;
 }
 

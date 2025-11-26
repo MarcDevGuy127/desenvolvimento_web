@@ -77,7 +77,7 @@ try {
                     <a href="../php/listar.php">Lista de Usuários</a>
                 </div>
             </li>
-            <li class="dropdown" id="marca"><a href="../tela_adm.html">Administração - Northwest Bank</a></li>
+            <li class="dropdown" id="marca"><a href="../pages/tela_adm.html">Administração - Northwest Bank</a></li>
         </ul>
     </nav>
     <div class="painel">
@@ -127,9 +127,6 @@ try {
                 <?php endforeach; ?>
             <?php endif; ?>
         </table>
-        <div class="sair">
-            <a href="logout.php">Sair</a>
-        </div>
     </div>
     <footer>&copy; 2025 - Northwest Bank</footer>
 </body>

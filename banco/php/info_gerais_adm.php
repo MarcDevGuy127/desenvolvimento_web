@@ -41,13 +41,13 @@ if (!$dadosAdministrador) {
           <a href="../php/info_gerais.php" class="dropbtn">Minha Conta</a>
           <div class="dropdown-content">
             <a href="../php/info_gerais.php">Informações Gerais</a>
-            <a href="../index.html">&#x21A9; Sair</a>
+            <a href="../php/logout.php">&#x21A9; Sair</a>
           </div>
         </li>
         <li class="dropdown">
-          <a href="saldo.html" class="dropbtn">Consultar</a>
+          <a href="../php/listar.php" class="dropbtn">Consultar</a>
           <div class="dropdown-content">
-            <a href="../php/listar.php">Lista de administradors</a>
+            <a href="../php/listar.php">Lista de Usuários</a>
           </div>
         </li>
         <li class="dropdown" id="marca">

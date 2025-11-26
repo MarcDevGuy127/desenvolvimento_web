@@ -21,7 +21,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt->execute([$email]);
         $adm = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        // depuração opcional:
         /*
         var_dump($email);
         var_dump($senha);
