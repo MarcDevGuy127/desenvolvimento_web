@@ -75,11 +75,9 @@ li.dropdown {
 .painel {
     display: flex;
     flex: 1;
-    justify-content: center;
-    /* centraliza horizontalmente */
-    align-items: center;
-    /* centraliza verticalmente (opcional) */
-    flex-direction: column;
+    justify-content: center; /* centraliza horizontalmente */
+    align-items: center; /* centraliza verticalmente (opcional) */
+    flex-direction: row;
     /* mantém os itens empilhados se houver mais de um */
     padding: 50px;
     background-color: rgba(162, 125, 125, 0.127);

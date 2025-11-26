@@ -13,7 +13,7 @@
     $stmt->bindParam(':id', $id);
     if ($stmt->execute()) {
         echo "Usuário deletado com sucesso!<br>";
-        header("Location: index.html");
+        header("Location: ../php/listar.php");
     } else {
         echo "Erro ao deletar";
     }
