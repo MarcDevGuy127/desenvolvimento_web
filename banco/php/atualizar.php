@@ -23,7 +23,7 @@ if (!$id || !$nome || !$email) {
 
 try {
 
-    // verificar se outro usuário usa o mesmo e-mail
+    // query para verficar se já existe usuário com o mesmo e-mail informado
     $verifica = $pdo->prepare(
         "SELECT id FROM usuario WHERE email = :email AND id != :id"
     );
@@ -58,12 +58,13 @@ try {
     $stmt->bindValue(':bairro', $bairro);
     $stmt->bindValue(':complemento', $complemento);
 
+    // executando atualização dos dados
     $stmt->execute();
 
-    // mensagem de que os dados foram atualizados!
+    // mensagem para informar que os dados foram atualizados
     echo "<script>
         alert('Dados atualizados com sucesso!');
-        window.location.href = '../pages/tela_adm.html';
+        window.location.href = '../pages/tela_inicial.html';
     </script>";
 
 } catch (PDOException $e) {

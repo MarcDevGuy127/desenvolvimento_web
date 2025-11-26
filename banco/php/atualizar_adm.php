@@ -18,14 +18,17 @@ if (!$id || !$nome || !$email) {
 
 try {
 
-    // verificar se outro usuário usa o mesmo e-mail
+    // query para verficar se já existe usuário com o mesmo e-mail informado
     $verifica = $pdo->prepare(
         "SELECT id FROM adm WHERE email = :email AND id != :id"
     );
     $verifica->bindValue(':email', $email);
     $verifica->bindValue(':id', $id, PDO::PARAM_INT);
+    
+    // executando procura por emails iguais ao digitado
     $verifica->execute();
 
+    // impedindo usuários com o mesmo email
     if ($verifica->rowCount() > 0) {
         echo "<script>
             alert('Este e-mail já está em uso por outro administrador.');
@@ -47,6 +50,7 @@ try {
     $stmt->bindValue(':email', $email);
     $stmt->bindValue(':telefone', $telefone);
 
+    // executando alterações
     $stmt->execute();
 
     // mensagem de que os dados foram atualizados!

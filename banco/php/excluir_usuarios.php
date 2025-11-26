@@ -1,23 +1,31 @@
- <?php
- // Conexão com o banco usando PDO
- $dsn = "mysql:host=localhost;dbname=plataforma_banco;charset=utf8";
- $usuario = "root";
- $senha = ""; // ajuste conforme o seu ambiente
- try {
-    $pdo = new PDO($dsn, $usuario, $senha);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    // Receber id via GET ou POST (exemplo usando GET)
-    $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
-    // Deletar usuário usando prepared statement
+<?php
+require_once '../php/config.php';  // importando conexão com o banco de dados
+
+// recebendo id do usuário a ser excluído
+$id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
+
+if (!$id) {
+    echo "ID inválido!";
+    exit;
+}
+
+try {
+    // query para exclusão do usuário selecionado
     $stmt = $pdo->prepare("DELETE FROM usuario WHERE id = :id");
-    $stmt->bindParam(':id', $id);
+    $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+
+    // após executar a exclusão redirecione administrador para a página de lista de usuários
     if ($stmt->execute()) {
-        echo "Usuário deletado com sucesso!<br>";
+        
+        // redirecionando tela
         header("Location: ../php/listar.php");
+        exit;
+
     } else {
-        echo "Erro ao deletar";
+        echo "Erro ao deletar.";
     }
- } catch (PDOException $e) {
-    echo "Erro de conexão: " . $e->getMessage();
- }
- ?>
+
+} catch (PDOException $e) {
+    echo "Erro: " . $e->getMessage();
+}
+?>

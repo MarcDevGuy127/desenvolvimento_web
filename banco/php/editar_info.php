@@ -55,24 +55,24 @@ try {
         <li class="dropdown">
           <a href="saldo.html" class="dropbtn">Consultar</a>
           <div class="dropdown-content">
-            <a href="saldo.html">Saldo</a>
+            <a href="#">Saldo</a>
           </div>
         </li>
         <li class="dropdown">
           <a href="#" class="dropbtn">Depósito</a>
           <div class="dropdown-content">
-            <a href="depositar.html">Depositar</a>
-            <a href="depositos.html">Histórico</a>
+            <a href="#">Depositar</a>
+            <a href="#">Histórico</a>
           </div>
         </li>
         <li class="dropdown">
-          <a href="saques.html" class="dropbtn">Saque</a>
+          <a href="#" class="dropbtn">Saque</a>
           <div class="dropdown-content">
-            <a href="saques.html">Histórico</a>
+            <a href="#">Histórico</a>
           </div>
         </li>
         <li>
-          <a href="contas.html">Contas</a>
+          <a href="#">Contas</a>
         </li>
         <li class="dropdown" id="marca">
           <a href="../index.html">Northwest Bank</a>

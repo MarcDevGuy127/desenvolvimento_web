@@ -38,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // gerando hash seguro
     $senha_hash = password_hash($senha, PASSWORD_DEFAULT);
 
-    //efetuando registro do usuário
+    // efetuando registro do usuário
     try {
         $stmt = $pdo->prepare("INSERT INTO usuario (nome, email, telefone, pais, uf, cidade, bairro, complemento, senha) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
         $stmt->execute([$nome, $email, $telefone, $pais, $uf, $cidade, $bairro, $complemento, $senha_hash]);

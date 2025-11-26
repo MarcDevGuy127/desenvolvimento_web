@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $senha = $_POST['senha'] ?? '';
     $confirma_senha = $_POST['confirma_senha'] ?? '';
 
-    // validação de senha
+    // validando se a senha nova e de confirmação são iguais
     if ($senha !== $confirma_senha) {
         echo "<script>alert('As senhas não coincidem!');</script>";
         exit;
