@@ -75,7 +75,7 @@ try {
           <a href="#">Contas</a>
         </li>
         <li class="dropdown" id="marca">
-          <a href="../index.html">Northwest Bank</a>
+          <a href="../php/logout.php">Northwest Bank</a>
         </li>
       </ul>
     </nav>

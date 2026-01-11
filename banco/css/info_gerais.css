@@ -74,6 +74,7 @@ li.dropdown {
 
 .painel {
     display: flex;
+    flex: 1;
     justify-content: center;
     /* centraliza horizontalmente */
     align-items: center;
