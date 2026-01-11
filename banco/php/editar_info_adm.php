@@ -46,7 +46,7 @@ try {
     <nav>
       <ul>
         <li class="dropdown">
-          <a href="../php/info_gerais.php" class="dropbtn">Minha Conta</a>
+          <a href="../php/info_gerais_adm.php" class="dropbtn">Minha Conta</a>
           <div class="dropdown-content">
             <a href="../php/info_gerais_adm.php">Informações Gerais</a>
             <a href="../php/logout.php">&#x21A9; Sair</a>

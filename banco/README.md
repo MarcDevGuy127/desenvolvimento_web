@@ -20,7 +20,7 @@ The application provides authentication, authorization, and user data management
 - List all client users  
 - Read and update client user data  
 - Delete client user accounts  
-- Search and filter users  
+- Search and filter users
 
 ## Security & Access Control
 - Role-based access restriction between Client and Admin portals  
@@ -31,6 +31,15 @@ The application provides authentication, authorization, and user data management
 - Separation of concerns between user roles  
 - Implementation of CRUD operations  
 - Focus on security best practices for authentication and authorization  
+
+## Images
+<img width="1755" height="811" alt="image" src="https://github.com/user-attachments/assets/fb9ecd1c-f0d3-4f36-bd05-603a0a216065" />
+
+<img width="1755" height="811" alt="image" src="https://github.com/user-attachments/assets/b9fa6d2b-eb4d-4e70-8c23-1b12fa6ff3b4" />
+
+<img width="1755" height="811" alt="image" src="https://github.com/user-attachments/assets/d1b00573-45d2-4a59-b70a-e9497e91688e" />
+
+<img width="1755" height="937" alt="image" src="https://github.com/user-attachments/assets/02d93529-47c8-40db-bb2b-3eb6fa0d9b61" />
 
 ## Developer
 **Marcelo Silva (MarkDevGuy127)**  

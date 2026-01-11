@@ -6,6 +6,7 @@ $id = filter_input(INPUT_POST, 'id', FILTER_VALIDATE_INT);
 $nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_SPECIAL_CHARS);
 $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
 $telefone = filter_input(INPUT_POST, 'telefone', FILTER_SANITIZE_SPECIAL_CHARS);
+$senha = filter_input(INPUT_POST, 'senha', FILTER_SANITIZE_SPECIAL_CHARS);
 
 // se id, nome ou email forem diferentes, os dados são inválidos.
 if (!$id || !$nome || !$email) {
@@ -40,7 +41,7 @@ try {
     // query para executar atualização de dados
     $stmt = $pdo->prepare(
         "UPDATE adm 
-                SET nome = :nome, email = :email, telefone = :telefone
+                SET nome = :nome, email = :email, telefone = :telefone, senha = :senha
                 WHERE id = :id"
     );
 
@@ -49,6 +50,7 @@ try {
     $stmt->bindValue(':nome', $nome);
     $stmt->bindValue(':email', $email);
     $stmt->bindValue(':telefone', $telefone);
+    $stmt->bindValue(':senha', $senha);
 
     // executando alterações
     $stmt->execute();
