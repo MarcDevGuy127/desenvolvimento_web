@@ -1,13 +1,26 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Testing JSON</title>
     <link rel="stylesheet" href="css/index.css" />
-    <script src="js/index.js"></script>
-</head>
-<body>
+  </head>
+  <body>    
+    <div class="painel">
+      <h2>User Registration</h2>
+      <form onclick="sendInfo()">
+        <label>Username:</label>
+        <input type="text" placeholder="MarcDevGuy127" minlength="10" maxlength="25" required/>
+        <label>Password:</label>
+        <input type="password" placeholder="********" minlength="12" maxlength="16" required/>
+        <button type="submit">Register</button>
+      </form>
+
+      <h3>Result:</h3>
+      <textarea id="result" placeholder="The values will appear here."></textarea>
+    </div>
     
-</body>
+    <script src="js/index.js"></script>
+  </body>
 </html>
