@@ -31,8 +31,10 @@ form {
     flex-direction: column;
 }
 
-textarea {
-    width: 20%;
+pre {
+    width: 50%;
+    margin: 5px;
+    text-align: center;
 }
 
 input {

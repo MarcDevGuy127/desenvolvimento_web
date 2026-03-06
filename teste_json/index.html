@@ -9,16 +9,16 @@
   <body>    
     <div class="painel">
       <h2>User Registration</h2>
-      <form onclick="sendInfo()">
+      <form>
         <label>Username:</label>
-        <input type="text" placeholder="MarcDevGuy127" minlength="10" maxlength="25" required/>
+        <input type="text" id="name" placeholder="MarcDevGuy127" minlength="10" maxlength="25" required/>
         <label>Password:</label>
-        <input type="password" placeholder="********" minlength="12" maxlength="16" required/>
-        <button type="submit">Register</button>
+        <input type="password" id="password" placeholder="********" minlength="12" maxlength="16" required/>
+        <button type="button" onclick="sendInfo()">Register</button>
       </form>
 
       <h3>Result:</h3>
-      <textarea id="result" placeholder="The values will appear here."></textarea>
+      <pre id="result" placeholder="The values will appear here."></pre>
     </div>
     
     <script src="js/index.js"></script>
