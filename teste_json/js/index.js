@@ -46,6 +46,13 @@ callApi();
 
 const POKE_URL = 'https://pokeapi.co/api/v2/pokemon/pikachu';
 fetch(POKE_URL)
-    .then(response => response.json())
-    .then(data => console.log(data.weight))
+    .then(response => {
+
+        // creating conditional for throw error when error status appears
+        if (!response.ok) {
+            throw new Error("Could not fetch resource");
+        }
+        return response.json(); // convertig response in json
+    })
+    .then(data => console.log(data))
     .catch(error => console.error(error));
