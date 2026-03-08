@@ -28,7 +28,10 @@ const URL = 'https://dummyjson.com/products';
 // test it using
 async function callApi() {
     const answer = await fetch(URL);
-    console.log(answer);
+    if (answer.status === 200) { // if response status 200
+        const apiObject = await answer.json();
+        console.log(apiObject);
+    }
 }
 
 callApi();
