@@ -16,7 +16,7 @@ function sendInfo() {
     document.getElementById("jsonResult").innerHTML = json;
 
     // converting json in object
-    
+
     const obj = JSON.parse(json);
 
     // showing results
@@ -25,12 +25,13 @@ function sendInfo() {
 const URL = 'https://dummyjson.com/products';
 
 // async/await shows the results just when it is loaded.
-// test it using
 async function callApi() {
-    const answer = await fetch(URL);
+    const answer = await fetch(URL); // the first await load the Header
     if (answer.status === 200) { // if response status 200
-        const apiObject = await answer.json();
+        const apiObject = await answer.json(); // the second await load the Body
         console.log(apiObject);
+        document.getElementById("apiResult").innerHTML =
+            `Name: ${apiObject.products[0].title} <br> Body: ${apiObject.products[0].description}`;
     }
 }
 
