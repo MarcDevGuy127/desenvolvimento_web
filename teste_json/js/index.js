@@ -25,7 +25,7 @@ function sendInfo() {
 const URL = 'https://dummyjson.com/products';
 
 // async/await shows the results just when it is loaded.
-// fetch(url, method: GET/POST/etc)
+/* fetch(url, method: GET/POST/etc)
 async function callApi() {
     const response = await fetch(URL); // the first await load the Header
     
@@ -42,17 +42,24 @@ async function callApi() {
     }
 }
 
-callApi();
+callApi();*/
 
-const POKE_URL = 'https://pokeapi.co/api/v2/pokemon/pikachu';
-fetch(POKE_URL)
-    .then(response => {
+const POKEDEX_URL = 'https://pokeapi.co/api/v2/pokemon/pikachu';
+async function fetchPokedex() {
+   
+    try {
+        const response = await fetch(POKEDEX_URL);
 
-        // creating conditional for throw error when error status appears
         if (!response.ok) {
             throw new Error("Could not fetch resource");
         }
-        return response.json(); // convertig response in json
-    })
-    .then(data => console.log(data))
-    .catch(error => console.error(error));
+
+        const data = await response.json();
+        console.log(data);
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+
+fetchPokedex();
