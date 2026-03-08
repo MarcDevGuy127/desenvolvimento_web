@@ -25,14 +25,27 @@ function sendInfo() {
 const URL = 'https://dummyjson.com/products';
 
 // async/await shows the results just when it is loaded.
+// fetch(url, method: GET/POST/etc)
 async function callApi() {
-    const answer = await fetch(URL); // the first await load the Header
-    if (answer.status === 200) { // if response status 200
-        const apiObject = await answer.json(); // the second await load the Body
-        console.log(apiObject);
+    const response = await fetch(URL); // the first await load the Header
+    
+    if (response.status === 200) { // if response status 200
+        const data = await response.json(); // the second await load the Body
+        
+        //const apiList = document.getElementById("apiListResult");
+        
+        console.log(data);
         document.getElementById("apiResult").innerHTML =
-            `Name: ${apiObject.products[0].title} <br> Body: ${apiObject.products[0].description}`;
+           `ID: ${data.products[0].id}
+           <br> Name: ${data.products[0].title}
+           <br> Body: ${data.products[0].description}`;
     }
 }
 
 callApi();
+
+const POKE_URL = 'https://pokeapi.co/api/v2/pokemon/pikachu';
+fetch(POKE_URL)
+    .then(response => response.json())
+    .then(data => console.log(data.weight))
+    .catch(error => console.error(error));
