@@ -22,12 +22,12 @@ function sendInfo() {
     // showing results
     document.getElementById("objectResult").innerHTML = object.name + ", " + object.password;
 }
-const URL = 'https://dummyjson.com/products';
+const PRODUCTS_URL = 'https://dummyjson.com/products';
 
 // async/await shows the results just when it is loaded.
-/* fetch(url, method: GET/POST/etc)
+// fetch(url, method: GET/POST/etc)
 async function callApi() {
-    const response = await fetch(URL); // the first await load the Header
+    const response = await fetch(PRODUCTS_URL); // the first await load the Header
     
     if (response.status === 200) { // if response status 200
         const data = await response.json(); // the second await load the Body
@@ -42,24 +42,25 @@ async function callApi() {
     }
 }
 
-callApi();*/
+callApi();
 
-const POKEDEX_URL = 'https://pokeapi.co/api/v2/pokemon/pikachu';
 async function fetchPokedex() {
    
     try {
-        const response = await fetch(POKEDEX_URL);
+        const pokemonName = document.getElementById("pokemonName").value.toLowerCase();
+        const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`);
 
         if (!response.ok) {
             throw new Error("Could not fetch resource");
         }
 
         const data = await response.json();
-        console.log(data);
+        const pokemonSprite = data.sprites.front_default;
+        const imgElement = document.getElementById("pokemonSprite");
+
+        imgElement.src = pokemonSprite;
+        imgElement.style.display = "block";
     } catch (error) {
         console.error(error);
     }
 }
-
-
-fetchPokedex();

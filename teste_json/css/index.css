@@ -49,3 +49,7 @@ form a {
     margin: 5px;
     text-align: center;
 }
+
+img {
+    display: none;
+}

@@ -8,7 +8,7 @@
   </head>
   <body>    
     <div class="painel">
-        <h1>Testing JSON</h1>
+      <!--h1>Testing JSON</h1>
       <h2>User Registration</h2>
       <form>
         <label>Username:</label>
@@ -19,20 +19,29 @@
       </form>
 
       <h2>Results</h2>
-      <h1>Object to JSON:</h1>
+      <h3>Object to JSON:</h3>
       <pre id="jsonResult"></pre>
 
-      <h1>JSON to Object:</h1>
+      <h3>JSON to Object:</h3>
       <pre id="objectResult"></pre>
 
       <h1>API Results:</h1>
       <div id="apiResult"></div>
 
       <h1>API Products List:</h1>
-      <div id="apiListResult"></div>
+      <div id="apiListResult"></div-->
 
       <h1>API Pokedex:</h1>
-      <div id="apiPokedexResult"></div>
+      <div id="apiPokedexResult">
+        
+        <input type="text" id="pokemonName" placeholder="Enter Pokemon name">
+        <button onclick="fetchPokedex()">Fetch Pokemon</button><br>
+    
+        <img src="" alt="Pokemon Sprite" id="pokemonSprite">
+    
+        <script src="index.js"></script>
+
+      </div>
     </div>
     
     <script src="js/index.js"></script>
