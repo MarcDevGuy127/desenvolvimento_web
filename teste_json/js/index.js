@@ -56,7 +56,12 @@ async function fetchPokedex() {
 
         const data = await response.json();
         const pokemonSprite = data.sprites.front_default;
+        // const pokemonTitle = data.name.front_default;
         const imgElement = document.getElementById("pokemonSprite");
+        // const cardElement = document.getElementById("pokemonTitle");
+
+        // cardElement.src = pokemonTitle;
+        // cardElement.style.background("yellow");
 
         imgElement.src = pokemonSprite;
         imgElement.style.display = "block";
